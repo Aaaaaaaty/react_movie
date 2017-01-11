@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  <view style="transform: scale({{transformScale}});" bindtouchstart="bindTouchStart"  bindtouchmove="bindTouchMove" class="testTouch">
+       <image style="width: 200px; height: 200px; background-color: #eeeeee;" mode="{{item.mode}}" src="{{src}}"></image>
+    <block wx:for="{{distancelogs}}" wx:for-item="log" wx:key="*this">
+        <text class="log-item">{{index + 1}}. {{log}}</text>
+    </block>
+  </view>
+
+</view>

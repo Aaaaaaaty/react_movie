@@ -1,3 +1,4 @@
+import React, { Component } from 'react';
 import styles from './style'
 
 class test extends Component {
@@ -8,7 +9,6 @@ class test extends Component {
   render() {
 
     // const { value,name, addState,changeName,postMessage,loadingData} = this.props
-
 
     return  (
               <div className = { styles.name }>asasacq122</div>

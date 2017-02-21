@@ -19,6 +19,7 @@ var alias = {
 
 
 module.exports = {
+		devtool: 'eval-source-map',
     entry: {
         index: './src/App.js',
         common: ["react","react-dom","jquery"],
@@ -31,15 +32,10 @@ module.exports = {
 //加载器配置
 		loaders: [
         {
-            test: /\.css$/,
-             loader:  ExtractTextPlugin.extract("style-loader","css-loader")
+					test: /(\.css|\.scss|\.sass)$/, loaders: ['style-loader', 'css-loader?modules', 'sass-loader?modules']
         },
-        {
-            test: /\.scss$/,
-            loader: ExtractTextPlugin.extract("style", 'css!sass')
-        },
-		{ test: /\.(png|jpg)$/, loader: 'url-loader?limit=1&name=../images/[name].[ext]'},
-            {test: /\.jsx?$/,loader: ['babel-loader'],query: {presets: ['es2015','react']}}
+				{ test: /\.(png|jpg)$/, loader: 'url-loader?limit=1&name=../images/[name].[ext]'},
+        { test: /\.jsx?$/,loader: ['babel-loader'],query: {presets: ['es2015','react']}}
 
 		]
 	} ,

@@ -5,7 +5,7 @@ const MODULES_PATH = path.join(ROOT_PATH, './node_modules'); // node包目录
 const BUILD_PATH = path.join(ROOT_PATH, './dist'); // 最后打包目录
 //分离CSS插件
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const CleanPlugin = require('clean-webpack-plugin');//npm install clean-webpack-plugin --save-dev
+const CleanPlugin = require('clean-webpack-plugin');//cnpm install clean-webpack-plugin --save-dev
 const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin
 
 
@@ -30,14 +30,20 @@ module.exports = {
    module: {
 //加载器配置
 		loaders: [
-	//	{ test: /\.css$/, loader: 'style-loader!css-loader' },
-			{ test: /\.scss$/, loader: 'style!css!sass?sourceMap' },
-	    { test: /\.css$/, loader:  ExtractTextPlugin.extract("style-loader","css-loader") },
-			{ test: /\.(png|jpg)$/, loader: 'url-loader?limit=1&name=../images/[name].[ext]' },
-	    { test: /\.jsx?$/,loader: ['babel-loader'],query: {presets: ['es2015','react']} }
+        {
+            test: /\.css$/,
+             loader:  ExtractTextPlugin.extract("style-loader","css-loader")
+        },
+        {
+            test: /\.scss$/,
+            loader: ExtractTextPlugin.extract("style", 'css!sass')
+        },
+		{ test: /\.(png|jpg)$/, loader: 'url-loader?limit=1&name=../images/[name].[ext]'},
+            {test: /\.jsx?$/,loader: ['babel-loader'],query: {presets: ['es2015','react']}}
+
 		]
 	} ,
- resolve:{
+    resolve:{
 		//查找module的话从这里开始查找
 
 		//自动扩展文件后缀名，意味着我们require模块可以省略不写后缀名
@@ -75,12 +81,11 @@ module.exports = {
    ],
  devServer: {
         contentBase: './dist',
-
-        port: 3200,
+        port: 3000,
         inline: true,
         hot: true,
         progress:true,
         historyApiFallback:true
-    }  /*npm start http://localhost:3200/index.html*/
+    }  /*npm start http://localhost:3000/index.html*/
 
 };

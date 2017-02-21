@@ -17,8 +17,9 @@ var alias = {
 	'jquery-qrcode':__dirname+'/lib/jquery.qrcode',//jq-生成二维码
 };
 
+
 module.exports = {
-		devtool: 'eval-source-map',
+    devtool: 'eval-source-map',
     entry: {
         index: './src/App.js',
         common: ["react","react-dom","jquery"],
@@ -31,10 +32,12 @@ module.exports = {
 //加载器配置
 		loaders: [
         {
-					test: /(\.css|\.scss|\.sass)$/, loaders: ['style-loader', 'css-loader?modules', 'sass-loader']
+             test: /(\.css|\.scss|\.sass)$/,
+             loader:  ExtractTextPlugin.extract("style-loader","css-loader?modules", 'sass-loader')
         },
-				{ test: /\.(png|jpg)$/, loader: 'url-loader?limit=1&name=../images/[name].[ext]'},
-        { test: /\.jsx?$/,loader: ['babel-loader'],query: {presets: ['es2015','react']}}
+
+		{ test: /\.(png|jpg)$/, loader: 'url-loader?limit=1&name=../images/[name].[ext]'},
+            {test: /\.jsx?$/,loader: ['babel-loader'],query: {presets: ['es2015','react']}}
 
 		]
 	} ,
@@ -66,12 +69,21 @@ module.exports = {
             minChunks: Infinity
         }),
        */
-	      // new ExtractTextPlugin("../css/[name].css"),
-	      new CleanPlugin(['dist'], {
-	        "root": ROOT_PATH,
-	        verbose: true,
-	        dry: false,
-	         exclude: ['index.html']
-	       }),
-   ]
+      new ExtractTextPlugin("../css/[name].css"),
+      new CleanPlugin(['dist'], {
+        "root": ROOT_PATH,
+        verbose: true,
+        dry: false,
+         exclude: ['index.html']
+       }),
+   ],
+ devServer: {
+        contentBase: './dist',
+        port: 3000,
+        inline: true,
+        hot: true,
+        progress:true,
+        historyApiFallback:true
+    }  /*npm start http://localhost:3000/index.html*/
+
 };

@@ -31,7 +31,7 @@ module.exports = {
 //加载器配置
 		loaders: [
         {
-					test: /(\.css|\.scss|\.sass)$/, loaders: ['style-loader', 'css-loader?modules', 'sass-loader?modules']
+					test: /(\.css|\.scss|\.sass)$/, loaders: ['style-loader', 'css-loader?modules', 'sass-loader']
         },
 				{ test: /\.(png|jpg)$/, loader: 'url-loader?limit=1&name=../images/[name].[ext]'},
         { test: /\.jsx?$/,loader: ['babel-loader'],query: {presets: ['es2015','react']}}

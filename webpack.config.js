@@ -30,27 +30,22 @@ module.exports = {
    module: {
 //加载器配置
 		loaders: [
-            
 	//	{ test: /\.css$/, loader: 'style-loader!css-loader' },
-		{ test: /\.scss$/, loader: 'style!css!sass?sourceMap'},
-        {
-            test: /\.css$/,
-             loader:  ExtractTextPlugin.extract("style-loader","css-loader")
-        },
-		{ test: /\.(png|jpg)$/, loader: 'url-loader?limit=1&name=../images/[name].[ext]'},
-            {test: /\.jsx?$/,loader: ['babel-loader'],query: {presets: ['es2015','react']}}
-          
+			{ test: /\.scss$/, loader: 'style!css!sass?sourceMap' },
+	    { test: /\.css$/, loader:  ExtractTextPlugin.extract("style-loader","css-loader") },
+			{ test: /\.(png|jpg)$/, loader: 'url-loader?limit=1&name=../images/[name].[ext]' },
+	    { test: /\.jsx?$/,loader: ['babel-loader'],query: {presets: ['es2015','react']} }
 		]
 	} ,
  resolve:{
 		//查找module的话从这里开始查找
-		
+
 		//自动扩展文件后缀名，意味着我们require模块可以省略不写后缀名
 		extensions: ['','.css','.scss','.js'],
 		//模块别名定义，方便后续直接引用别名，无须多写长长的地址
 		alias:alias
 	},
-    
+
    plugins:  [
         new webpack.HotModuleReplacementPlugin(),//热加载
         // 把jquery作为全局变量插入到所有的代码中
@@ -69,23 +64,23 @@ module.exports = {
             // 对所有entry实行这个规则
             minChunks: Infinity
         }),
-       */  
-      new ExtractTextPlugin("../css/[name].css"),  
-      new CleanPlugin(['dist'], {
-        "root": ROOT_PATH,
-        verbose: true,
-        dry: false,
-         exclude: ['index.html']
-       }),
+       */
+	      new ExtractTextPlugin("../css/[name].css"),
+	      new CleanPlugin(['dist'], {
+	        "root": ROOT_PATH,
+	        verbose: true,
+	        dry: false,
+	         exclude: ['index.html']
+	       }),
    ],
  devServer: {
         contentBase: './dist',
-       
+
         port: 3200,
         inline: true,
         hot: true,
         progress:true,
         historyApiFallback:true
-    }  /*npm start http://localhost:3200/index.html*/  
-    
+    }  /*npm start http://localhost:3200/index.html*/
+
 };

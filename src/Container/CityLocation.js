@@ -3,7 +3,7 @@ import { connect ,Provider} from 'react-redux'
     
 import {mapStateToProps,mapDispatchToProps} from '../Redux/Store/Store';
 
-import CityType from '../Components/CityType/CityType';
+import CityType from '../Components/CityType/CityType.js';
 import LoctionType from '../Components/CityType/LoctionType';
 
 
@@ -18,14 +18,16 @@ class CityLocation extends PureComponent {
     }
     render() {
 	  
-    const {cityMap,loctionCtiy,getCityLocation} = this.props;
+        const {cityMap,loctionCtiy,getCityLocation} = this.props;
         
-    var cityNodes=[];
+        var cityNodes=[];
        
     
-    cityMap.forEach(function(node,index){
-        cityNodes.push(<CityType title={node.title} citys={node.citys} key={"key"+index} />)
-    })
+        cityMap.forEach(function(node,index){
+           var title=node.title
+            var cityarr=node.citys
+            cityNodes.push((<CityType title={title} citys={cityarr} key={"key"+index} />) )
+        })
     
         
     
@@ -35,11 +37,12 @@ class CityLocation extends PureComponent {
        
     
         
-   
+ console.log("v222")  
     
     return (<div>
-            {locationNode}
-            {cityNodes}
+                
+                {locationNode}
+                {cityNodes}
             </div>)
     
     

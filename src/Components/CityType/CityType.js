@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-var style=require("./cityType.scss")
+var style=require("./ctStyle.scss")
 class CityType extends PureComponent {
     constructor(props){
        super(props);

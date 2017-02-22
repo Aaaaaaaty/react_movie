@@ -27,7 +27,7 @@ module.exports = {
         common: ["react","react-dom","jquery"],
     },
     output: {
-        path: path.resolve(__dirname, './dist'),
+        path: path.resolve(__dirname, './dist/js'),
 		publicPath: '/dist/',
 	filename: '[name].js', // 输出文件名
     },

@@ -37,7 +37,7 @@ class CityLocation extends PureComponent {
        
     
         
- console.log("v222")  
+
     
     return (<div>
                 

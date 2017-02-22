@@ -1,0 +1,3 @@
+{code:0,message:"OK",result:[{cityCode:"12345",cityName:"北京",isHot:"true",firstLetter:"B"},{cityCode:"2",cityName:"上海",isHot:"true",firstLetter:"S"},
+{cityCode:"13",cityName:"广州",isHot:"true",firstLetter:"G"},{cityCode:"14",cityName:"深圳",isHot:"true",firstLetter:"S"},{cityCode:"15",cityName:"湛江",isHot:"true",firstLetter:"Z"},
+{cityCode:"17",cityName:"长春",isHot:"true",firstLetter:"C"}，{cityCode:"23",cityName:"大里",isHot:"true",firstLetter:"D"}，{cityCode:"27",cityName:"葫芦岛",isHot:"true",firstLetter:"H"}]}

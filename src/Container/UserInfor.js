@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 class UserInfor extends Component {
     constructor(props){
        super(props);
-     
+      
     }
   render() {
 	  

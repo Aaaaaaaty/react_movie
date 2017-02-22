@@ -8,8 +8,6 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CleanPlugin = require('clean-webpack-plugin');//cnpm install clean-webpack-plugin --save-dev
 const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin
 
-const precss       = require('precss');
-const autoprefixer = require('autoprefixer');
 
 
 var alias = {
@@ -27,36 +25,30 @@ module.exports = {
         common: ["react","react-dom","jquery"],
     },
     output: {
-        path: BUILD_PATH+"/js", // 设置输出目录
+				path: path.resolve(__dirname, './dist'),
+				publicPath: '/dist/',
         filename: '[name].js', // 输出文件名
     },
    module: {
 //加载器配置
 		loaders: [
-        {
-             test: /(\.css|\.scss|\.sass)$/,
-             loader:  ExtractTextPlugin.extract("style-loader","css-loader?modules!sass-loader")
-        },
-       
-		{ test: /\.(png|jpg)$/, loader: 'url-loader?limit=1&name=../images/[name].[ext]'},
-        {test: /\.jsx?$/,loader: ['babel-loader'],query: {presets: ['es2015','react']}}
-          
+        {	test: /(\.css|\.scss|\.sass)$/, loader:  ExtractTextPlugin.extract("style-loader","css-loader?modules", 'sass-loader')},
+				{ test: /\.(png|jpg)$/, loader: 'url-loader?limit=1&name=../images/[name].[ext]'},
+        { test: /\.js?$/, loader: ['babel-loader'],query: {presets: ['es2015','react']}}
+
 		]
 	} ,
-    postcss: function () {
-    return [precss, autoprefixer];
-    },
     resolve:{
 		//查找module的话从这里开始查找
-		
+
 		//自动扩展文件后缀名，意味着我们require模块可以省略不写后缀名
 		extensions: ['','.css','.scss','.js'],
 		//模块别名定义，方便后续直接引用别名，无须多写长长的地址
 		alias:alias
 	},
-    
+
    plugins:  [
-        new webpack.HotModuleReplacementPlugin(),//热加载
+        // new webpack.HotModuleReplacementPlugin(),//热加载
         // 把jquery作为全局变量插入到所有的代码中
         // 然后就可以直接在页面中使用jQuery了
         new webpack.ProvidePlugin({
@@ -73,15 +65,15 @@ module.exports = {
             // 对所有entry实行这个规则
             minChunks: Infinity
         }),
-       */  
-      new ExtractTextPlugin("../css/[name].css"),  
-      new CleanPlugin(['dist'], {
-        "root": ROOT_PATH,
-        verbose: true,
-        dry: false,
-         exclude: ['index.html']
-       }),
+       */
+      new ExtractTextPlugin("../css/[name].css"),
+      // new CleanPlugin(['dist'], {
+      //   "root": ROOT_PATH,
+      //   verbose: true,
+      //   dry: false,
+      //    exclude: ['index.html']
+      //  }),
    ],
-   
-    
+	  /*npm start http://localhost:3000/index.html*/
+
 };

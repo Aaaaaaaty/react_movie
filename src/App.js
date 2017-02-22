@@ -3,20 +3,20 @@ import ReactDOM, {render} from 'react-dom';
 import {Provider} from 'react-redux';
 import route from './Router/Route'; //路由配置
 import store from './Redux/Store/Store';
-require("./utils/retina");
-require("./styles/base");
-/*
-class Roots extends Component {
-    render() {
-        return (
-            <div  className="testClass">adasdfsadfsd</div>
-        );
-    }
-}
-render(<Roots   /> 
-       ,document.getElementById('content')
-);
-*/
+
+
+//
+// class Roots extends Component {
+//     render() {
+//         return (
+//             <div  className="testClass">adasdfsadfsd</div>
+//         );
+//     }
+// }
+// render(<Roots   />
+//        ,document.getElementById('content')
+// );
+
 
 
 
@@ -26,4 +26,3 @@ render(
     </Provider>,
     document.getElementById('content')
 );
-

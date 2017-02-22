@@ -36,23 +36,12 @@ const UserInfor  = {
     }
 }
 
-import CityLocationPage from '../Container/CityLocation';
-const cityLocation  = {
-    path:'cityLocation',
-    getComponent(nextState,cb){require.ensure([],(require)=>{
-            return cb(null,CityLocationPage)
-        })
-    }
-}
-
-
-
 
 
 
 const rootRoute ={
     component:Roots,
-    childRoutes:[UserInfor,Index,cityLocation]
+    childRoutes:[UserInfor,Index]
 }
 
 

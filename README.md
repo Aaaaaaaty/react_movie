@@ -2,7 +2,6 @@
 > 影院react版
 
 > 技术栈：react redux sass webpack es6
-asasasasas
 
 ## Directory
 

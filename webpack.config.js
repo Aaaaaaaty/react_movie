@@ -25,19 +25,16 @@ module.exports = {
         common: ["react","react-dom","jquery"],
     },
     output: {
-        path: BUILD_PATH+"/js", // 设置输出目录
+				path: path.resolve(__dirname, './dist'),
+				publicPath: '/dist/',
         filename: '[name].js', // 输出文件名
     },
    module: {
 //加载器配置
 		loaders: [
-        {
-             test: /(\.css|\.scss|\.sass)$/,
-             loader:  ExtractTextPlugin.extract("style-loader","css-loader?modules", 'sass-loader')
-        },
-
-		{ test: /\.(png|jpg)$/, loader: 'url-loader?limit=1&name=../images/[name].[ext]'},
-            {test: /\.jsx?$/,loader: ['babel-loader'],query: {presets: ['es2015','react']}}
+        {	test: /(\.css|\.scss|\.sass)$/, loader:  ExtractTextPlugin.extract("style-loader","css-loader?modules", 'sass-loader')},
+				{ test: /\.(png|jpg)$/, loader: 'url-loader?limit=1&name=../images/[name].[ext]'},
+        { test: /\.js?$/, loader: ['babel-loader'],query: {presets: ['es2015','react']}}
 
 		]
 	} ,
@@ -51,7 +48,7 @@ module.exports = {
 	},
 
    plugins:  [
-        new webpack.HotModuleReplacementPlugin(),//热加载
+        // new webpack.HotModuleReplacementPlugin(),//热加载
         // 把jquery作为全局变量插入到所有的代码中
         // 然后就可以直接在页面中使用jQuery了
         new webpack.ProvidePlugin({
@@ -70,20 +67,13 @@ module.exports = {
         }),
        */
       new ExtractTextPlugin("../css/[name].css"),
-      new CleanPlugin(['dist'], {
-        "root": ROOT_PATH,
-        verbose: true,
-        dry: false,
-         exclude: ['index.html']
-       }),
+      // new CleanPlugin(['dist'], {
+      //   "root": ROOT_PATH,
+      //   verbose: true,
+      //   dry: false,
+      //    exclude: ['index.html']
+      //  }),
    ],
- devServer: {
-        contentBase: './dist',
-        port: 3000,
-        inline: true,
-        hot: true,
-        progress:true,
-        historyApiFallback:true
-    }  /*npm start http://localhost:3000/index.html*/
+	  /*npm start http://localhost:3000/index.html*/
 
 };

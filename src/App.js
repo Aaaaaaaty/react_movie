@@ -5,18 +5,18 @@ import route from './Router/Route'; //路由配置
 import store from './Redux/Store/Store';
 
 
-/*
-class Roots extends Component {
-    render() {
-        return (
-            <div  className="testClass">adasdfsadfsd</div>
-        );
-    }
-}
-render(<Roots   /> 
-       ,document.getElementById('content')
-);
-*/
+//
+// class Roots extends Component {
+//     render() {
+//         return (
+//             <div  className="testClass">adasdfsadfsd</div>
+//         );
+//     }
+// }
+// render(<Roots   />
+//        ,document.getElementById('content')
+// );
+
 
 
 
@@ -26,4 +26,3 @@ render(
     </Provider>,
     document.getElementById('content')
 );
-

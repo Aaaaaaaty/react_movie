@@ -30,7 +30,7 @@
     "transfer-webpack-plugin": "^0.1.4",
     "url-loader": "^0.5.7",
     "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.9.0"
+    "webpack-dev-server": "^1.16.3"
   },
   "dependencies": {
     "babel-preset-react": "^6.16.0",
@@ -38,14 +38,16 @@
     "jquery": "^3.1.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
-    "react-redux": "^5.0.1"
+    "react-redux": "^5.0.1",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.3"
   },
   "name": "1212",
   "version": "1.0.0",
   "description": "test1",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack-dev-server –hot –inline  --content-base "
+    "start": "webpack-dev-server --devtool --inline --hot --progress --colors --content-base dist"
   },
   "author": "zhangyue",
   "license": "ISC"

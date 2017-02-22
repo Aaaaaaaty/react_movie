@@ -11,7 +11,7 @@ class test extends Component {
     // const { value,name, addState,changeName,postMessage,loadingData} = this.props
 
     return  (
-              <div className = { styles.name }>asasacq122</div>
+              <div className = { styles.name }>asasacqaxz33</div>
             )
 
   }

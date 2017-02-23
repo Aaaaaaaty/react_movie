@@ -48,22 +48,7 @@ export const fetchPosts = (url, postData) => {
         
         
         
-        return fetch("http://10.2.45.84/package.json",{//http://10.2.45.84/package.json
-            mode: 'no-cors',
-            method:"GET",
-            
-        })
-        .then(response => {
-           
-            console.log("status", response);
-            //console.log("status", response.blob());
-            if (response.ok) {
-                response.json().then(json => dispatch({type:"REQUEST_RECEIVED",text:json}))
-            } else {
-                console.log("status1", response.status);
-            }
-        })
-        .catch(error => console.log(error))
+        
     }
 }
 
@@ -92,6 +77,14 @@ export const fetchCityMap = (url, postData) => {
 export const LOCATION_FETCHSTART="LOCATION_FETCHSTART";
 export const LOCATION_RECEIVE="LOCATION_RECEIVE"
 export const LOCATION_ERROR="LOCATION_ERROR"
+export const LOCATION_CHANGE="LOCATION_CHANGE"
+
+export const changeLocation= function(text) {
+  return {
+    type: LOCATION_CHANGE,
+    text
+  }
+}
 
 export const fetchCityLocation = (url, postData) => {
     return dispatch => {
@@ -108,6 +101,7 @@ export const fetchCityLocation = (url, postData) => {
                 response.json().then(json =>{ dispatch({type:"LOCATION_RECEIVE",text:json})})
             } else {
                 console.log("status", response.status);
+                dispatch({type:"LOCATION_ERROR",text:""})
             }
         })
         .catch(error => {
@@ -118,7 +112,26 @@ export const fetchCityLocation = (url, postData) => {
     }
 }
 
+export const SEARCH_START="SEARCH_START"
+export const SEARCH_END="SEARCH_END"
+export const LOCATION_SEARCH="LOCATION_SEARCH"
 
-
-
+export const searchWord= function(text) {
+  return {
+    type: LOCATION_SEARCH,
+    text
+  }
+}
+export const searchStart=function(text) {
+  return {
+    type: SEARCH_START,
+    text
+  }
+}
+export const searchEnd=function(text) {
+  return {
+    type: SEARCH_END,
+    text
+  }
+}
 

@@ -17,7 +17,9 @@ export const mapStateToProps =(state)=> {
     name: state.name,
     postMessage:state.postMessage,
     cityMap:state.cityMap,
-    loctionCtiy:state.loctionCtiy
+    loctionCtiy:state.loctionCtiy,
+    searching:state.searching,
+    searchResult:state.searchResult,
   }
 }
 export const mapDispatchToProps=(dispatch)=> {
@@ -26,7 +28,11 @@ export const mapDispatchToProps=(dispatch)=> {
     changeName: () => dispatch(Actions.nameChange("message")),
     loadingData:()=>dispatch(Actions.fetchPosts("https://wholesaletest.playcomb.com/gameList/getWholeSaleGameList","123123")),
     getCityMap:(url,data)=>dispatch(Actions.fetchCityMap(url,data)),
-    getCityLocation:(url,data)=>dispatch(Actions.fetchCityLocation(url,data))
+    getCityLocation:(url,data)=>dispatch(Actions.fetchCityLocation(url,data)),
+    changeCityLocation:(data)=>dispatch(Actions.changeLocation(data)),
+    searchingStart:()=>dispatch(Actions.searchStart()),
+    searchEnd:()=>dispatch(Actions.searchEnd()),
+    searchingWord:(data)=>dispatch(Actions.searchWord(data))
   }
 }
 

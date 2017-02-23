@@ -57,10 +57,9 @@ const filmList  = {
 
 
 
-
 const rootRoute ={
     component:Roots,
-    childRoutes:[UserInfor, Index, cityLocation, filmList]
+    childRoutes:[UserInfor,Index,cityLocation,filmList]
 }
 
 

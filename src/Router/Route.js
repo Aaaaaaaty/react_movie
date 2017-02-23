@@ -46,10 +46,19 @@ const cityLocation  = {
 }
 
 import FilmListPage from '../Container/FilmList';
-const filmList  = {
+const filmList = {
     path:'filmList',
     getComponent(nextState,cb){require.ensure([],(require)=>{
             return cb(null,FilmListPage)
+        })
+    }
+}
+
+import FilmScheduleListPage from '../Container/FilmScheduleList';
+const FilmScheduleList = {
+    path:'FilmScheduleList',
+    getComponent(nextState,cb){require.ensure([],(require)=>{
+            return cb(null,FilmScheduleListPage)
         })
     }
 }
@@ -60,7 +69,7 @@ const filmList  = {
 
 const rootRoute ={
     component:Roots,
-    childRoutes:[UserInfor, Index, cityLocation, filmList]
+    childRoutes:[UserInfor, Index, cityLocation, filmList, FilmScheduleList]
 }
 
 

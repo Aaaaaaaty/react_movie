@@ -6,6 +6,7 @@ $green_tip: #7ec235;
 $white: #ffffff;
 
 .filmFlex {
+  display: -webkit-flex;
   display: flex;
   flex-direction: row;
   margin-top: 0.3rem;
@@ -58,6 +59,7 @@ $white: #ffffff;
   padding: 0.1rem 0.45rem;
   border-radius: 1rem;
   font-size: .28rem;
+  line-height: 1.8rem;
 }
 .btn_type_1 {
   composes: btn;

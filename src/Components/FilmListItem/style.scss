@@ -7,7 +7,7 @@ $white: #ffffff;
 .filmFlex {
   display: flex;
   flex-direction: row;
-  margin-bottom: 0.3rem;
+  margin-top: 0.3rem;
   .filmContent {
     width: 4.09rem;
     .title {
@@ -54,7 +54,7 @@ $white: #ffffff;
   color: $white;
 }
 .btn {
-  padding: 0.14rem 0.45rem;
+  padding: 0.1rem 0.45rem;
   border-radius: 1rem;
   font-size: .28rem;
 }

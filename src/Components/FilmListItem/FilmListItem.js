@@ -7,19 +7,6 @@ class FilmListItem extends Component {
      super(props);
   }
   render() {
-    // 'name': '刺客信条',
-    // 'filmShortCode': 0,
-    // 'releaseTime': '2016-01-23',
-    // 'director': 'someone',
-    // 'starring': '迈克尔·法斯宾德,玛丽昂·歌迪亚',
-    // 'phrase': '穿越黑科技，法鲨炫腹肌',
-    // 'posterUrl': 'http://static.wepiao.com/movie/2016/9/7_0/201609070940573548.jpg',
-    // 'userFilmInterestCount': 10,
-    // 'saleStatus': 0, //售卖状态，0不可售，1可售，2预售
-    // 'is2D': true,
-    // 'is3D': false,
-    // 'isImax': true,
-    // 'isDmax': false
     let { name, phrase, starring, saleStatus, url, filmType } = this.props
     let posterImgStyle = {
       background: 'url(' + url + ') center center no-repeat',

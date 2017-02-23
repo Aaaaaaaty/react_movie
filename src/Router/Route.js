@@ -45,6 +45,14 @@ const cityLocation  = {
     }
 }
 
+import FilmListPage from '../Container/FilmList';
+const filmList  = {
+    path:'filmList',
+    getComponent(nextState,cb){require.ensure([],(require)=>{
+            return cb(null,FilmListPage)
+        })
+    }
+}
 
 
 
@@ -52,7 +60,7 @@ const cityLocation  = {
 
 const rootRoute ={
     component:Roots,
-    childRoutes:[UserInfor,Index,cityLocation]
+    childRoutes:[UserInfor, Index, cityLocation, filmList]
 }
 
 

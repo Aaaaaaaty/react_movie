@@ -1,3 +1,75 @@
-.a {
-  color: white;
+$gray_title: #222833;
+$gray_sub: #7d838e;
+$gray_line: #d1d5da;
+$red: #fe4b37;
+.buyTicket {
+  position: fixed;
+  bottom: 0;
+}
+.schedule {
+  width: 7.5rem;
+  height: 4.74rem;
+  position: relative;
+  // overflow: hidden;
+}
+.scheduleItem {
+  width: 7.5rem;
+  float: left;
+  border-top: 1px solid $gray_line;
+  height: 4.74rem;
+  overflow-y: auto;
+}
+.wrapper {
+  display: flex;
+  margin: 0.4rem 0rem;
+  height: 0.7rem;
+  border-bottom: 1px solid $gray_line;
+  padding-bottom: 0.4rem;
+}
+.titleWrapper {
+  display: flex;
+  border-top: 1px solid $gray_line;
+}
+.title {
+  width: 1.875rem;
+  font-size: 0.26rem;
+  text-align: center;
+  margin: 0.2rem 0rem;
+}
+.base {
+  width: 100%;
+  font-size: 0.25rem;
+  color: $gray_title;
+  text-align: center;
+}
+.baseSub {
+  font-size: 0.22rem;
+  color: $gray_sub;
+}
+.time {
+  composes: base;
+}
+.endTime {
+  composes: baseSub;
+}
+.subHall {
+  composes: baseSub;
+}
+.subPrice {
+  composes: baseSub;
+}
+.btn {
+  border: 1px solid $red;
+  padding: 0.11rem 0.39rem;
+  border-radius: 0.29rem;
+  line-height: 0.7rem;
+}
+.nobuyBtn {
+  composes: btn;
+  border: 1px solid $gray_sub;
+  color: $gray_sub;
+}
+.buyBtn{
+  composes: btn;
+  color: $red;
 }

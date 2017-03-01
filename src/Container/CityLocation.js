@@ -33,7 +33,7 @@ class CityLocation extends PureComponent {
             cityNodes.push((<CityType title={title} locationC={changeCityLocation} citys={cityarr} key={"key"+index} />) )
         })
     
-        console.log(searchResult)
+        //console.log(searchResult)
         if(searchResult.result.length>0){   
             var searchArr=((<SearchResult citys={searchResult.result}  />) )
             
@@ -48,7 +48,7 @@ class CityLocation extends PureComponent {
      
     
      
-                    if(searchResult.result.length>0){
+                    if(searchResult.result.length>0&&searching){
                             return (<div>
                                     <SearchInput origindata={cityMap.originData} searching={searching} searchingWord={searchingWord} searchingStart={searchingStart} searchEnd={searchEnd} searchResult={searchResult} />
                             

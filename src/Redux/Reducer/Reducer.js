@@ -139,3 +139,33 @@ function findCinimals(data){
 
 
 
+export const cityCinimas = (state ={"text":"waitToFetch"}, action={})=>{
+ 
+    switch(action.type){
+        case Actions.CITY_CINIMA_FETCH:
+        return {"text":"waiting"}
+        case Actions.CITY_CINIMA_RECEIVE:
+        return action.text.result
+        case Actions.CITY_CINIMA_ERROR:
+        return {"text":"fail"}
+        
+        default:
+        return state
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

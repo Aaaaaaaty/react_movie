@@ -135,3 +135,39 @@ export const searchEnd=function(text) {
   }
 }
 
+export const CITY_CINIMA_FETCH="CITY_CINIMA_FETCH"
+export const CITY_CINIMA_RECEIVE="CITY_CINIMA_RECEIVE"
+export const CITY_CINIMA_ERROR="CITY_CINIMA_ERROR"
+
+export const fetchCityCinimas = (url, postData) => {
+    return dispatch => {
+        dispatch({type:"CITY_CINIMA_FETCH",text:postData});
+       
+      return fetch(url,{
+            mode: 'no-cors',
+            method:"GET",
+        })
+        .then(response => {
+         
+            if (response.ok) {
+                 
+                response.json().then(json =>{ dispatch({type:"CITY_CINIMA_RECEIVE",text:json})})
+            } else {
+                console.log("status", response.status);
+                 dispatch({type:"CITY_CINIMA_ERROR",text:""})
+            }
+        })
+        .catch(error => {
+           
+                        console.log(error);
+                        dispatch({type:"CITY_CINIMA_ERROR",text:""})
+                        })
+    }
+}
+
+
+
+
+
+
+

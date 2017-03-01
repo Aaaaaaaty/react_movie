@@ -16,10 +16,11 @@ export const mapStateToProps =(state)=> {
     value: state.value,
     name: state.name,
     postMessage:state.postMessage,
-    cityMap:state.cityMap,
-    loctionCtiy:state.loctionCtiy,
-    searching:state.searching,
-    searchResult:state.searchResult,
+    cityMap:state.cityMap,//所有 城市院线
+    loctionCtiy:state.loctionCtiy,//所属地选择 所属地状态
+    searching:state.searching,//所属地选择页面，是否点开搜索框
+    searchResult:state.searchResult,//所处地选择 搜索结果
+    cityCinimas:state.cityCinimas,//本市影院数据
   }
 }
 export const mapDispatchToProps=(dispatch)=> {
@@ -27,12 +28,13 @@ export const mapDispatchToProps=(dispatch)=> {
     addState: () => dispatch(Actions.addNum("message")),
     changeName: () => dispatch(Actions.nameChange("message")),
     loadingData:()=>dispatch(Actions.fetchPosts("https://wholesaletest.playcomb.com/gameList/getWholeSaleGameList","123123")),
-    getCityMap:(url,data)=>dispatch(Actions.fetchCityMap(url,data)),
-    getCityLocation:(url,data)=>dispatch(Actions.fetchCityLocation(url,data)),
-    changeCityLocation:(data)=>dispatch(Actions.changeLocation(data)),
-    searchingStart:()=>dispatch(Actions.searchStart()),
-    searchEnd:()=>dispatch(Actions.searchEnd()),
-    searchingWord:(data)=>dispatch(Actions.searchWord(data))
+    getCityMap:(url,data)=>dispatch(Actions.fetchCityMap(url,data)),//获取城市院线
+    getCityLocation:(url,data)=>dispatch(Actions.fetchCityLocation(url,data)),//获取所在地
+    changeCityLocation:(data)=>dispatch(Actions.changeLocation(data)),//改变所在地
+    searchingStart:()=>dispatch(Actions.searchStart()),//点选所在地搜索框
+    searchEnd:()=>dispatch(Actions.searchEnd()),//所在地搜索取消
+    searchingWord:(data)=>dispatch(Actions.searchWord(data)),//所在地 搜索关键词
+    fetchCityCinimas:(url,data)=>dispatch( Actions.fetchCityCinimas(url,data)),//获取所在城市影院
   }
 }
 

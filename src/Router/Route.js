@@ -54,12 +54,19 @@ const filmList  = {
     }
 }
 
-
+import CinimaSelect from '../Container/CinimaSelect';
+const cinimaSelectList  = {
+    path:'cinimaSelect',
+    getComponent(nextState,cb){require.ensure([],(require)=>{
+            return cb(null,CinimaSelect)
+        })
+    }
+}
 
 
 const rootRoute ={
     component:Roots,
-    childRoutes:[UserInfor,Index,cityLocation,filmList]
+    childRoutes:[UserInfor,Index,cityLocation,filmList,cinimaSelectList]
 }
 
 

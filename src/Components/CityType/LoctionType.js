@@ -1,4 +1,6 @@
 import React, { PureComponent } from 'react';
+var style=require("./ctStyle.scss")
+var baseStyle=require("../../styles/base.scss")
 class CityType extends PureComponent {
     constructor(props){
        super(props);
@@ -8,21 +10,22 @@ class CityType extends PureComponent {
     const {cityData,recheck} = this.props
    
     var showIner=<div >正在定位中</div>
-   
-    if(cityData.cityName){
-        showIner=<div>{cityData.cityName}</div>
+  
+    if(!!cityData.cityName){
+        showIner=<li className={style.toleft}>{cityData.cityName}</li>
+         
     }
     else if(cityData.text=="waiting"){
-        showIner=<div>正在定位中。。。</div>
+       showIner=<li  className={style.normal } ><em></em>正在定位中。。。</li>
     }
     else if(cityData.text=="fail"){
-        showIner=<div onClick={recheck}>定位失败，点击重试</div>
+        showIner=<li className={style.normal }  onClick={recheck}><span className={style.fail}>定位失败，点击重试</span></li>
     }
     
     
-    return (<div>
+    return (<div  className={style.sline}>
                 <h5>定位城市</h5>       
-                <ul>
+                <ul className={baseStyle.clear}>
                     {showIner}
                 </ul>
     

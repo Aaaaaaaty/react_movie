@@ -7,18 +7,29 @@ class CityType extends PureComponent {
      }
     render() {
 	  
-    const {title,citys} = this.props
+    const {title,citys,locationC} = this.props
    
     
     var cityNodes=[];
-       
+      if(title.length>2){
+          var className= style.toleft
+        }
+        else{
+           var className=style.linep
+        } 
     
     citys.forEach(function(node,index){
-        cityNodes.push(<li  className={baseStyle.left} key={"key"+index}>{node.cityName}</li>)
+       /* function goCity(){
+            var cityOb=node;
+            locationC(cityOb)
+        }
+        onClick={goCity}*/
+        
+        cityNodes.push(<li   className={className} key={"key"+index}>{node.cityName}</li>)
     })
   
-    return (<div className={style.sline}>
-                <h5>{title}</h5>       
+    return (<div  className={style.sline}>
+                <h5 name={title}> {title}</h5>       
                 <ul className={baseStyle.clear}>
                     {cityNodes}
                 </ul>

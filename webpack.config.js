@@ -24,12 +24,12 @@ module.exports = {
     devtool: 'eval-source-map',
     entry: {
         index: './src/App.js',
-        common: ["react","react-dom","jquery"],
+        common: ["react","react-dom","jquery","underscore"],
     },
     output: {
         path: path.resolve(__dirname, './dist/js'),
 		publicPath: '',
-	filename: '[name].js', // 输出文件名
+	    filename: '[name].js', // 输出文件名
     },
    module: {
 //加载器配置
@@ -38,10 +38,10 @@ module.exports = {
              test: /(\.css|\.scss|\.sass)$/,
              loader:  ExtractTextPlugin.extract("style-loader","css-loader?modules!sass-loader")
         },
-
-		{ test: /\.(png|jpg)$/, loader: 'url-loader?limit=1&name=../images/[name].[ext]'},
+       
+		{test: /\.(png|jpg)$/, loader: 'url-loader?limit=1&name=../images/[name].[ext]'},
         {test: /\.jsx?$/,loader: ['babel-loader'],query: {presets: ['es2015','react']}}
-
+          
 		]
 	} ,
     postcss: function () {
@@ -49,13 +49,13 @@ module.exports = {
     },
     resolve:{
 		//查找module的话从这里开始查找
-
+		
 		//自动扩展文件后缀名，意味着我们require模块可以省略不写后缀名
 		extensions: ['','.css','.scss','.js'],
 		//模块别名定义，方便后续直接引用别名，无须多写长长的地址
 		alias:alias
 	},
-
+    
    plugins:  [
       //  new webpack.HotModuleReplacementPlugin(),//热加载
         // 把jquery作为全局变量插入到所有的代码中
@@ -74,8 +74,8 @@ module.exports = {
             // 对所有entry实行这个规则
             minChunks: Infinity
         }),
-       */
-      new ExtractTextPlugin("../css/[name].css"),
+       */  
+      new ExtractTextPlugin("../css/[name].css"),  
       new CleanPlugin(['dist'], {
         "root": ROOT_PATH,
         verbose: true,
@@ -83,6 +83,6 @@ module.exports = {
          exclude: ['index.html']
        }),
    ],
-
-
+   
+    
 };

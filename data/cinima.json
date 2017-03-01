@@ -1,0 +1,7 @@
+{"code":0,"message":"OK","result":[{"cinemaLinkId":"123451","name":"完美影城1","cityCode":"12122","cityName":"北京","goodsLimit":3,"hallCount":2,"addressString":"sdfsfs","phone":"1212121","trafficRoute":"123123","distanceInt":"1212",
+                                    "facilityServices":[{"name":"a","des":"adsfasf","type":1},{"name":"b","des":"adsfasf","type":2}]},
+                                  
+                                  {"cinemaLinkId":"12312","name":"完美影城2","cityCode":"12122","cityName":"北京","goodsLimit":3,"hallCount":3,"addressString":"sdfsfs","phone":"1212121","trafficRoute":123131,"distanceInt":1212,
+                                    "facilityServices":[{"name":"a","des":"adsfasf","type":1},{"name":"b","des":"adsfasf","type":2}]}
+                                  
+                                  ]}

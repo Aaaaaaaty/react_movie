@@ -1,0 +1,16 @@
+.searchbox{
+    position: relative; height: 0.85rem;border-top: 0.01rem solid #7e7e7e;border-bottom: 0.01rem solid #b5b5b5; background: #c9c9ce;
+     
+    input{ transition: all 0.2s linear; text-indent: 2.5rem;height: 0.55rem; width: 7.2rem; margin-top: 0.15rem ; border-radius:0.08rem; border: none; outline: none; margin-left: 0.15rem;font-size: 0.28rem;}
+    .searchicon{transition: all 0.2s linear;background: url("../../images/searchbtn_01.png")  no-repeat; background-size: 0.26rem 0.26rem;width: 0.26rem; height: 0.26rem; position: absolute; top:0.30rem; left:2.25rem;  }
+    .cancelicon{ position: absolute; height: 0.85rem; right: 0; top: 0; display: none; font-size: 0.28rem; line-height: 0.85rem; width: 1.35rem;text-align: center; font-style: normal; color: #fff;}
+    
+    .searching{
+        input{ width: 6rem; text-align: left;text-indent: 0.5rem;}
+        .searchicon{ left:0.25rem;  }
+        .cancelicon{ display: block;}
+    }
+    
+}
+
+

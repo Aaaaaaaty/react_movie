@@ -8,13 +8,9 @@ import thunk from 'redux-thunk';
 var store = createStore(
    combineReducers({filmScheduleReducer, reducer}),
    applyMiddleware(thunk)
-);
-console.log(store.getState())
-
-
+)
 
 export const mapStateToProps =(state)=> {
-  console.log('mapStateToProps', state.reducer);
   return {
     value: state.reducer.value,
     name: state.reducer.name,

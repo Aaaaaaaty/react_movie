@@ -9,7 +9,13 @@ class FilmScheduleList extends Component {
   constructor(props){
      super(props);
   }
-
+  componentWillMount() {
+    const { getFilmScheduleList } = this.props
+    getFilmScheduleList("./data/filmScheduleList.json", "")
+  }
+  componentDidMount() {
+    console.log('props',this.props);
+  }
   render() {
     let mockData = [{
         'hallName': '0号厅',

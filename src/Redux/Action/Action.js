@@ -31,24 +31,24 @@ export const minusNum= function(text) {
 export const fetchPosts = (url, postData) => {
     return dispatch => {
         dispatch({type:"REQUEST_START",text:postData});
-        
+
         return (
-                 $.ajax({  
-                        url : "http://hdsupport.tgbus.com/api/index?aid=31&cid=3&s=get_targets&page_size=500",  
-                        dataType : "jsonp", 
-                        success : function(data){  
+                 $.ajax({
+                        url : "http://hdsupport.tgbus.com/api/index?aid=31&cid=3&s=get_targets&page_size=500",
+                        dataType : "jsonp",
+                        success : function(data){
                            dispatch({type:"REQUEST_RECEIVED",text:data})
-                        },  
-                        error:function(){  
-                            //alert('fail');  
-                        }  
-                    }) 
-        
+                        },
+                        error:function(){
+                            //alert('fail');
+                        }
+                    })
+
         )
-        
-        
-        
-        
+
+
+
+
     }
 }
 
@@ -58,7 +58,7 @@ export const CITYMAP_RECEIVE="CITYMAP_RECEIVE"
 export const fetchCityMap = (url, postData) => {
     return dispatch => {
         dispatch({type:"CITYMAP_FETCHSTART",text:postData});
-        
+
       return fetch(url,{
             mode: 'no-cors',
             method:"GET",
@@ -89,15 +89,15 @@ export const changeLocation= function(text) {
 export const fetchCityLocation = (url, postData) => {
     return dispatch => {
         dispatch({type:"LOCATION_FETCHSTART",text:postData});
-       
+
       return fetch(url,{
             mode: 'no-cors',
             method:"GET",
         })
         .then(response => {
-         
+
             if (response.ok) {
-                 
+
                 response.json().then(json =>{ dispatch({type:"LOCATION_RECEIVE",text:json})})
             } else {
                 console.log("status", response.status);
@@ -105,7 +105,7 @@ export const fetchCityLocation = (url, postData) => {
             }
         })
         .catch(error => {
-           
+
                         console.log(error);
                         dispatch({type:"LOCATION_ERROR",text:""})
                         })
@@ -142,15 +142,15 @@ export const CITY_CINIMA_ERROR="CITY_CINIMA_ERROR"
 export const fetchCityCinimas = (url, postData) => {
     return dispatch => {
         dispatch({type:"CITY_CINIMA_FETCH",text:postData});
-       
+
       return fetch(url,{
             mode: 'no-cors',
             method:"GET",
         })
         .then(response => {
-         
+
             if (response.ok) {
-                 
+
                 response.json().then(json =>{ dispatch({type:"CITY_CINIMA_RECEIVE",text:json})})
             } else {
                 console.log("status", response.status);
@@ -158,16 +158,9 @@ export const fetchCityCinimas = (url, postData) => {
             }
         })
         .catch(error => {
-           
+
                         console.log(error);
                         dispatch({type:"CITY_CINIMA_ERROR",text:""})
                         })
     }
 }
-
-
-
-
-
-
-

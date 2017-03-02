@@ -1,9 +1,9 @@
 import * as Actions from '../Action/Action';
-
+import { combineReducers } from 'redux'
 import _ from 'underscore';
-    
+
 export const value = (state = 5, action={})=>{
-     
+
   // console.log(state)
      switch(action.type){
         case Actions.ADD:
@@ -15,7 +15,7 @@ export const value = (state = 5, action={})=>{
   }
 }
 export const name = (state = "aaa", action={})=>{
- 
+
    //  console.log(state)
     switch(action.type){
         case Actions.NAME_CHANGE:
@@ -26,7 +26,7 @@ export const name = (state = "aaa", action={})=>{
 }
 
 export const postMessage = (state = "nomessage", action={})=>{
- 
+
    //  console.log(state)
     switch(action.type){
         case Actions.REQUEST_START:
@@ -41,7 +41,7 @@ export const postMessage = (state = "nomessage", action={})=>{
 
 
 export const cityMap = (state ={"citysData":[],"navData":[],"originData":[]}, action={})=>{
- 
+
     switch(action.type){
         case Actions.CITYMAP_FETCHSTART:
         return {"citysData":[],"navData":[],"originData":[]}
@@ -52,19 +52,19 @@ export const cityMap = (state ={"citysData":[],"navData":[],"originData":[]}, ac
     }
 }
 function cityDataSetUp(data){
-   
+
     var hotCitys=_(data).filter(function(city){
         return city.isHot=="true";
     })
-    
+
     var sortdata=_(data).sortBy(function(city){
         return city.firstLetter;
     })
-    
+
     var newdata=_(sortdata).groupBy(function(city){
         return city.firstLetter
     })
-    
+
     var newdatac=[{title:"热门城市",citys:hotCitys}]
     var navData=["热门城市"]
     for(var i in newdata){
@@ -73,13 +73,13 @@ function cityDataSetUp(data){
     }
    // console.log(data)
    var dataob={"citysData":newdatac,"navData":navData,originData:data}
-   
+
     return dataob;
 }
 
 
 export const loctionCtiy = (state ={"text":"geting"}, action={})=>{
- 
+
     switch(action.type){
         case Actions.LOCATION_FETCHSTART:
         return {"text":"waiting"}
@@ -108,9 +108,9 @@ export const searching=(state =false, action={})=>{
 export const searchResult=(state ={keyWord:"",result:[]}, action={})=>{
     switch(action.type){
         case Actions.LOCATION_SEARCH:
-        
+
         return findCinimals(action.text)
-       
+
         default:
         return state
     }
@@ -118,29 +118,29 @@ export const searchResult=(state ={keyWord:"",result:[]}, action={})=>{
 function findCinimals(data){
     var keyWord=String(data.keyword).toLocaleLowerCase();
     var originData=data.origindata;
-  
-    
+
+
     if(String(keyWord).trim().length>0){
-         
+
         var result=_(originData).filter(function(sdata,index){
             var bol=(String(sdata.cityName).toLocaleLowerCase().indexOf(keyWord)>-1||String(sdata.firstLetter).toLocaleLowerCase().indexOf(keyWord)>-1)
-           
+
             return bol
-            
+
          })
-         
+
          return {keyWord:keyWord,result:result}
     }
     else{
         return {keyWord:"",result:[]}
     }
-   
+
 }
 
 
 
 export const cityCinimas = (state ={"text":"waitToFetch"}, action={})=>{
- 
+
     switch(action.type){
         case Actions.CITY_CINIMA_FETCH:
         return {"text":"waiting"}
@@ -148,24 +148,16 @@ export const cityCinimas = (state ={"text":"waitToFetch"}, action={})=>{
         return action.text.result
         case Actions.CITY_CINIMA_ERROR:
         return {"text":"fail"}
-        
+
         default:
         return state
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default combineReducers({
+  cityMap,
+  loctionCtiy,
+  searching,
+  searchResult,
+  cityCinimas
+})

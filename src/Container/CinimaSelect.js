@@ -3,7 +3,9 @@ import { connect ,Provider} from 'react-redux'
     
 import {mapStateToProps,mapDispatchToProps} from '../Redux/Store/Store';
 import CinimaSelectNode from '../Components/CityType/CinimaSelectNode';
-
+import Header from '../Components/PageHeader/PageCitySelectorHeader';
+import $ from "jquery"
+require("jquery-cookie")
 class CinimaSelect extends Component {
     constructor(props){
        super(props);
@@ -11,7 +13,19 @@ class CinimaSelect extends Component {
     }
     componentWillMount(){
          const {fetchCityCinimas} = this.props;
-         fetchCityCinimas('http://10.2.45.84/data/cinima2.json',"")
+        
+         var code
+         if(this.props.params.cityId=="default"){
+            code=$.cookie("cityCode")
+            
+         }
+        else {
+            code=this.props.params.cityId
+             $.cookie("cityCode",code)
+             
+        }
+         //console.log(code)
+         fetchCityCinimas('http://10.2.45.84/data/cinima.json',"")
     }
   render() {
 	  
@@ -28,7 +42,16 @@ class CinimaSelect extends Component {
        }
       else{  cinimanode=((<CinimaSelectNode cinimas={cityCinimas}  />) )}
      // console.log(cityCinimas)
+         var   city="选择城市"
+                         
+        if(cityCinimas[0]){
+                         city=  cityCinimas[0].cityName
+                         }
+  
+    var   headData={"title":"选择城市","ltitle":city,"lclick":"/cityLocation"};//,"rtitle":"关闭","rclick":"/cinimaSelect/default"
+                          
     return  (<div>
+                        <Header   headerData={headData} />    
                          {cinimanode}
               </div>)
     

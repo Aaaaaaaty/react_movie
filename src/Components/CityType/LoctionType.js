@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 var style=require("./ctStyle.scss")
-var baseStyle=require("../../styles/base.scss")
+var baseStyle=require("../../styles/base.scss");
+import { Link} from 'react-router';
 class CityType extends PureComponent {
     constructor(props){
        super(props);
@@ -12,7 +13,7 @@ class CityType extends PureComponent {
     var showIner=<div >正在定位中</div>
   
     if(!!cityData.cityName){
-        showIner=<li className={style.toleft}>{cityData.cityName}</li>
+        showIner=<li className={style.toleft}><Link to={"/cinimaSelect/"+cityData.cityCode}>{cityData.cityName}</Link></li>
          
     }
     else if(cityData.text=="waiting"){

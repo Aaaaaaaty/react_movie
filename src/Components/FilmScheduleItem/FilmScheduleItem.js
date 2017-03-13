@@ -17,7 +17,14 @@ class FilmScheduleItem extends Component {
   componentWillMount() {
     let { data } = this.props
     this.setState({
-      data: data
+      data: data,
+    })
+  }
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      data: nextProps.data,
+      translateX: 0,
+      animationTime: 0
     })
   }
   onTouchStart(e) {

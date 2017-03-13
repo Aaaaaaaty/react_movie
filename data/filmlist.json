@@ -1,0 +1,91 @@
+{
+  "online":[{
+    "name": "刺客信条",
+    "filmShortCode": 0,
+    "releaseTime": "2016-01-23",
+    "director": "someone",
+    "starring": "迈克尔·法斯宾德,玛丽昂·歌迪亚迈克尔·法斯宾德,玛丽昂·歌迪亚",
+    "phrase": "穿越黑科技，法鲨炫腹肌",
+    "posterUrl": "http://static.wepiao.com/movie/2016/9/7_0/201609070940573548.jpg",
+    "userFilmInterestCount": 10,
+    "saleStatus": 1,
+    "is2D": true,
+    "is3D": false,
+    "isImax": true,
+    "isDmax": false
+  },{
+    "name": "从你的全世界路过",
+    "filmShortCode": 0,
+    "releaseTime": "2016-01-23",
+    "director": "someone",
+    "starring": "邓超 杨洋 白百合 张天爱",
+    "phrase": "穿越黑科技，法鲨炫腹肌",
+    "posterUrl": "http://static.wepiao.com/movie/2016/9/20_0/201609201030512727.jpg",
+    "userFilmInterestCount": 10,
+    "saleStatus": 1,
+    "is2D": true,
+    "is3D": true,
+    "isImax": true,
+    "isDmax": false
+  },{
+    "name": "樱桃小丸子：来自意大利的少年",
+    "filmShortCode": 0,
+    "releaseTime": "2016-01-23",
+    "director": "someone",
+    "starring": "樱桃小丸子",
+    "phrase": "穿越黑科技，法鲨炫腹肌",
+    "posterUrl": "http://static.wepiao.com/movie/2016/8/30_0/201608301238141346.jpg",
+    "userFilmInterestCount": 10,
+    "saleStatus": 2,
+    "is2D": true,
+    "is3D": false,
+    "isImax": true,
+    "isDmax": false
+  },{
+    "name": "七月与安生",
+    "filmShortCode": 0,
+    "releaseTime": "2016-01-23",
+    "director": "someone",
+    "starring": "周冬雨 马思纯",
+    "phrase": "穿越黑科技，法鲨炫腹肌",
+    "posterUrl": "http://static.wepiao.com/movie/2016/9/5_0/201609050956396819.jpg",
+    "userFilmInterestCount": 10,
+    "saleStatus": 1,
+    "is2D": true,
+    "is3D": false,
+    "isImax": true,
+    "isDmax": false
+  }],
+  "coming":[
+    {
+      "name": "追凶者也",
+      "filmShortCode": 0,
+      "releaseTime": "2016-01-23",
+      "director": "someone",
+      "starring": "迈克尔·法斯宾德,玛丽昂·歌迪亚",
+      "phrase": "穿越黑科技，法鲨炫腹肌",
+      "posterUrl": "http://static.wepiao.com/movie/2016/8/24_0/201608241044045203.jpg",
+      "userFilmInterestCount": 10,
+      "saleStatus": 2,
+      "is2D": true,
+      "is3D": false,
+      "isImax": true,
+      "isDmax": false
+    },
+    {
+      "name": "大话西游",
+      "filmShortCode": 0,
+      "releaseTime": "2016-01-23",
+      "director": "someone",
+      "starring": "迈克尔·法斯宾德,玛丽昂·歌迪亚",
+      "phrase": "穿越黑科技，法鲨炫腹肌",
+      "posterUrl": "http://static.wepiao.com/movie/2016/9/2_0/201609021008045581.jpg",
+      "userFilmInterestCount": 10,
+      "saleStatus": 2,
+      "is2D": true,
+      "is3D": false,
+      "isImax": true,
+      "isDmax": false
+    }
+  ]
+}

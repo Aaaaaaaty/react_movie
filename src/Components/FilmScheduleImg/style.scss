@@ -1,0 +1,34 @@
+$gray_word:#7d838e;
+$black_word: #000000;
+.slideWrapper {
+  height: 4.4rem;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 0.4rem;
+}
+.slideContent {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 100;
+}
+.slideItem {
+  position: absolute;
+}
+.slideText {
+  position: absolute;
+  bottom: 0rem;
+  width: 100%;
+}
+.slideTitle {
+  font-size: 0.32rem;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+.slideSub {
+  font-size: 0.22rem;
+  text-align: center;
+  color: $gray_word;
+}

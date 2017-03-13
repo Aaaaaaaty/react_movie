@@ -67,7 +67,7 @@ const FilmScheduleList = {
 
 import CinimaSelect from '../Container/CinimaSelect';
 const cinimaSelectList  = {
-    path:'cinimaSelect',
+    path:'cinimaSelect/:cityId',
     getComponent(nextState,cb){require.ensure([],(require)=>{
             return cb(null,CinimaSelect)
         })

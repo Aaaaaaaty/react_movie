@@ -8,7 +8,7 @@ import LoctionType from '../Components/CityType/LoctionType';
 import SearchResult from '../Components/CityType/SearchResult';
 import NavNode from '../Components/NavNode/NavNode';
 import SearchInput from '../Components/SearcherInput/Searcher';
-
+import Header from '../Components/PageHeader/PageCitySelectorHeader';
 
 
 class CityLocation extends PureComponent {
@@ -45,11 +45,13 @@ class CityLocation extends PureComponent {
 
 
     var navNode=<NavNode navTag={cityMap.navData}   />
-
+                            
+        var   headData={"title":"选择城市","ltitle":"关闭","lclick":"/cinimaSelect/default"};
 
 
                     if(searchResult.result.length>0&&searching){
                             return (<div>
+                                     <Header   headerData={headData} />    
                                     <SearchInput origindata={cityMap.originData} searching={searching} searchingWord={searchingWord} searchingStart={searchingStart} searchEnd={searchEnd} searchResult={searchResult} />
 
                                     {searchArr}</div>)
@@ -57,7 +59,7 @@ class CityLocation extends PureComponent {
                     }
                     else{
                          return (<div>
-
+                             <Header   headerData={headData} />               
                             <SearchInput origindata={cityMap.originData} searching={searching} searchingWord={searchingWord} searchingStart={searchingStart} searchEnd={searchEnd} searchResult={searchResult} />
                             {locationNode}
                             {cityNodes}

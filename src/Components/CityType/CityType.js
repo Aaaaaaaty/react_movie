@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 var style=require("./ctStyle.scss")
 var baseStyle=require("../../styles/base.scss")
+import { Link} from 'react-router';
 class CityType extends PureComponent {
     constructor(props){
        super(props);
@@ -25,7 +26,7 @@ class CityType extends PureComponent {
         }
         onClick={goCity}*/
         
-        cityNodes.push(<li   className={className} key={"key"+index}>{node.cityName}</li>)
+        cityNodes.push(<li   className={className} key={"key"+index}><Link to={"/cinimaSelect/"+node.cityCode}>{node.cityName}</Link></li>)
     })
   
     return (<div  className={style.sline}>

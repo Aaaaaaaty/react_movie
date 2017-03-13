@@ -1,0 +1,17 @@
+$bg_gray: #f4f6f8;
+.seatWrapper {
+  width: 7.5rem;
+  height: 8.25rem;
+  background-color: $bg_gray;
+  position: fixed;
+  overflow: hidden;
+  bottom: 2.04rem;
+}
+.seatItemWrapper {
+  position: absolute;
+}
+.seatItem {
+  width: 0.35rem;
+  height: 0.33rem;
+  border: 0.01rem solid black;
+}

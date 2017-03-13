@@ -56,9 +56,18 @@ const filmList = {
 
 import FilmScheduleListPage from '../Container/FilmScheduleList';
 const FilmScheduleList = {
-    path:'FilmScheduleList',
+    path:'filmScheduleList',
     getComponent(nextState,cb){require.ensure([],(require)=>{
             return cb(null,FilmScheduleListPage)
+        })
+    }
+}
+
+import FilmChooseListPage from '../Container/FilmChooseSeat';
+const FilmChooseSeat = {
+    path:'filmChooseSeat',
+    getComponent(nextState,cb){require.ensure([],(require)=>{
+            return cb(null,FilmChooseListPage)
         })
     }
 }
@@ -77,7 +86,7 @@ const cinimaSelectList  = {
 
 const rootRoute ={
     component:Roots,
-    childRoutes:[UserInfor,Index,cityLocation,filmList,cinimaSelectList,FilmScheduleList]
+    childRoutes:[UserInfor,Index,cityLocation,filmList,cinimaSelectList,FilmScheduleList,FilmChooseSeat]
 }
 
 

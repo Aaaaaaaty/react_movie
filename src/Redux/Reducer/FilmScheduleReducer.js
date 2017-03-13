@@ -12,6 +12,18 @@ export const filmScheduleList = (state = [], action={})=>{
     }
 }
 
+export const filmList = (state = [], action={})=>{
+    switch(action.type){
+        case filmScheduleActions.FILM_LIST_FETCH:
+        return state
+        case filmScheduleActions.FILM_LIST_SUCESS:
+        return state = action.text
+        default:
+        return state
+    }
+}
+
 export default combineReducers({
-  filmScheduleList
+  filmScheduleList,
+  filmList
 })

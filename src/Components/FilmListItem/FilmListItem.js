@@ -9,7 +9,7 @@ class FilmListItem extends Component {
   render() {
     let { name, phrase, starring, saleStatus, url, filmType } = this.props
     let posterImgStyle = {
-      background: 'url(' + url + ') center center no-repeat',
+      background: `url(${ url }) center center no-repeat`,
       width: '1.5rem',
       height: '2.05rem',
       backgroundSize: 'contain'

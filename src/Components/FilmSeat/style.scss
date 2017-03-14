@@ -1,4 +1,5 @@
 $bg_gray: #f4f6f8;
+$num_gray: #c3c5c6;
 .seatWrapper {
   width: 7.5rem;
   height: 8.25rem;
@@ -11,7 +12,16 @@ $bg_gray: #f4f6f8;
   position: absolute;
 }
 .seatItem {
-  width: 0.35rem;
-  height: 0.33rem;
   border: 0.01rem solid black;
+}
+.numIndexWrapper {
+  position: absolute;
+  width: 0.26rem;
+  top: 1rem;
+  background-color: $num_gray;
+}
+.numIndex {
+  position: absolute;
+  font-size: 0.2rem;
+  // display: inline-block;
 }

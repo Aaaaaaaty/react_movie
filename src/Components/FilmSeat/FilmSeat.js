@@ -14,7 +14,10 @@ class FilmSeat extends Component {
         left: 0,
         top: 0,
         animationTime: 0,
-        isScaleFinish: true
+        dis: 0,
+        isScaleFinish: true,
+        isTwo: false,
+        wrapperWidth: 5.25, //选座框外层宽度
      }
   }
   onTouchStart(e) {
@@ -39,26 +42,33 @@ class FilmSeat extends Component {
   }
   onTouchMove(e) {
     e.preventDefault()
-    let { startX, startY, lastDisX, lastDisY, dis, scaleOld, isScaleFinish } = this.state
+    let { startX, startY, lastDisX, lastDisY, dis, scaleOld, isScaleFinish, isTwo } = this.state
     if(isScaleFinish) {
       if(e.touches.length === 1) {
         let moveX = e.touches[0].clientX
         let moveY = e.touches[0].clientY
         let disX = moveX - startX + lastDisX
         let disY = moveY - startY + lastDisY
-        this.setState({
-          moveX: moveX,
-          moveY: moveY,
-          left: disX,
-          top: disY,
-        })
-      } else {
+        if(isTwo) {
+          this.setState({
+            isTwo: false
+          })
+        } else {
+          this.setState({
+            moveX: moveX,
+            moveY: moveY,
+            left: disX,
+            top: disY,
+          })
+        }
+      } else if(e.touches.length === 2) {
         let moveDis = this.calDistance(e)
         let scaleNum = moveDis / dis
         let scaleResult = scaleNum + scaleOld - 1
         if( scaleResult > 2.5) scaleResult = 2.5
         this.setState({
-          scaleNum: scaleResult
+          scaleNum: scaleResult,
+          isTwo: true
         })
       }
     }
@@ -113,12 +123,41 @@ class FilmSeat extends Component {
   onTouchStartWrapper(e) {
     e.preventDefault()
   }
+  getSeatColNum(seatList, maxSize, seatWidth) {
+    let { left, top, scaleNum, animationTime, wrapperWidth } = this.state
+    let numIndex = 0
+    let numArr = []
+    seatList.forEach((item, index) => {
+      if(item.yAxis === numIndex + 1) {
+        numArr[numIndex] = item
+      } else {
+        numIndex ++
+      }
+    })
+    let result = numArr.map((item, index) => {
+      let scaleHeight = (seatWidth * maxSize.maxY) * (scaleNum - 1)
+      let top = ((seatWidth) * (item.yAxis - 1))
+      let style = {
+        top: `${top * scaleNum}rem`,
+      }
+      return(
+        <li key={'numindex' + index}
+            className={ styles.numIndex }
+            style={ style }>
+            {index}
+        </li>
+      )
+    })
+    return result
+  }
   render() {
     let { filmSeatList } = this.props
-    let { left, top, scaleNum, animationTime } = this.state
+    let { left, top, scaleNum, animationTime, wrapperWidth } = this.state
     let seatList = filmSeatList.seatArr
     if(seatList) {
       let maxSize = this.getWrapperSize(seatList)
+      let seatWidth = wrapperWidth / maxSize.maxX
+      let seatWrapperHeight = seatWidth * maxSize.maxY
       let list = seatList.map((item, index) => {
         let isSold = '#ffffff'
         if(item.isSold) {
@@ -126,8 +165,10 @@ class FilmSeat extends Component {
         }
         let style = {
           position: 'absolute',
-          left:`${item.xAxis * 0.6}rem`,
-          top: `${item.yAxis * 0.6}rem`,
+          left: `${seatWidth * (item.xAxis - 1)}rem`,
+          top: `${seatWidth * (item.yAxis - 1)}rem`,
+          width: `${wrapperWidth / maxSize.maxX}rem`,
+          height: `${wrapperWidth / maxSize.maxX}rem`,
           backgroundColor: `${ isSold }`
         }
         return (
@@ -136,12 +177,13 @@ class FilmSeat extends Component {
                 className={ styles.seatItem }></div>
         )
       })
+      let listNum = this.getSeatColNum(seatList, maxSize, seatWidth)
       let style = {
-        width: `${ maxSize.maxX * 0.8 }rem`,
-        height: `${ maxSize.maxY * 0.8 }rem`,
+        width: `${wrapperWidth}rem`,
+        height: `${ seatWrapperHeight }rem`,
         left: `${ 3.75 + (left / 100) }rem`,
         top: `${ 1 + top / 100 }rem`,
-        marginLeft: `${ -maxSize.maxX * 0.4 }rem`,
+        marginLeft: `${ -wrapperWidth / 2 }rem`,
         transform: `scale(${scaleNum})`,
         MsTransform:`scale(${scaleNum})`, 	/* IE 9 */
         MozTransform:`scale(${scaleNum})`, 	/* Firefox */
@@ -153,15 +195,20 @@ class FilmSeat extends Component {
         MsTransition:`all ${animationTime}ms linear`,
         transition:`all ${animationTime}ms linear`,
       }
+      let styleNumIndexWrapper = {
+        top: `${ (1 + top / 100 - seatWidth* maxSize.maxY *(scaleNum - 1)/2) }rem`, //算出缩放后和最初的变化值，除以二，给-top,里面小的li标签直接top*scale
+        height: `${ seatWrapperHeight * scaleNum }rem`,
+        zIndex: 100
+      }
       return (
         <div  className={ styles.seatWrapper }
               onTouchStart={ this.onTouchStartWrapper.bind(this) }>
+          <ul className={ styles.numIndexWrapper } style={ styleNumIndexWrapper }>{ listNum }</ul>
           <div  className={ styles.seatItemWrapper }
                 style={ style }
                 onTouchStart={ this.onTouchStart.bind(this) }
                 onTouchMove={ this.onTouchMove.bind(this) }
                 onTouchEnd={ this.onTouchEnd.bind(this) }>
-            <span>{this.state.left},{this.state.top}</span>
             { list }
           </div>
         </div>

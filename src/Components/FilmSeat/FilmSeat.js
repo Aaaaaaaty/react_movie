@@ -17,7 +17,8 @@ class FilmSeat extends Component {
         dis: 0,
         isScaleFinish: true,
         isTwo: false,
-        wrapperWidth: 5.25, //选座框外层宽度
+        wrapperWidth: 5.25, //选座框外层宽度,
+        isSoldUrl: 'seat_white'
      }
   }
   onTouchStart(e) {
@@ -143,38 +144,62 @@ class FilmSeat extends Component {
       return(
         <li key={'numindex' + index}
             className={ styles.numIndex }
-            style={ style }>
-            {index}
+            style={ style }
+            >
+            {index + 1}
         </li>
       )
     })
     return result
   }
+  changeSeat(isSoldUrl, index) {
+    if(isSoldUrl[index] === 'seat_white') {
+      isSoldUrl[index] = 'seat_green'
+    } else if(isSoldUrl[index] === 'seat_green') {
+      isSoldUrl[index] = 'seat_white'
+    }
+    this.setState({
+      isSoldUrl: isSoldUrl
+    })
+  }
+  componentWillReceiveProps(nextProp) {
+    let { filmSeatList } = nextProp
+    let seatList = filmSeatList.seatArr
+    let isSoldUrl = []
+    if(seatList) {
+      seatList.forEach((item, index) => {
+        if(item.isSold) {
+          isSoldUrl[index] = 'seat_red'
+        } else {
+          isSoldUrl[index] = 'seat_white'
+        }
+      })
+      this.setState({
+        isSoldUrl: isSoldUrl
+      })
+    }
+  }
   render() {
     let { filmSeatList } = this.props
-    let { left, top, scaleNum, animationTime, wrapperWidth } = this.state
+    let { left, top, scaleNum, animationTime, wrapperWidth, isSoldUrl } = this.state
     let seatList = filmSeatList.seatArr
     if(seatList) {
       let maxSize = this.getWrapperSize(seatList)
       let seatWidth = wrapperWidth / maxSize.maxX
       let seatWrapperHeight = seatWidth * maxSize.maxY
       let list = seatList.map((item, index) => {
-        let isSold = '#ffffff'
-        if(item.isSold) {
-          isSold = '#fa5939'
-        }
         let style = {
           position: 'absolute',
           left: `${seatWidth * (item.xAxis - 1)}rem`,
           top: `${seatWidth * (item.yAxis - 1)}rem`,
           width: `${wrapperWidth / maxSize.maxX}rem`,
-          height: `${wrapperWidth / maxSize.maxX}rem`,
-          backgroundColor: `${ isSold }`
         }
         return (
-          <div  key={ 'seatId' + index }
+          <img  key={ 'seatId' + index }
                 style={ style }
-                className={ styles.seatItem }></div>
+                src={ `.\/images\/${isSoldUrl[index]}.png` }
+                onTouchTap={ this.changeSeat.bind(this, isSoldUrl, index) }
+                className={ styles.seatItem }></img>
         )
       })
       let listNum = this.getSeatColNum(seatList, maxSize, seatWidth)

@@ -1,5 +1,6 @@
 $bg_gray: #f4f6f8;
 $num_gray: #c3c5c6;
+$num_white: #f0f0f1;
 .seatWrapper {
   width: 7.5rem;
   height: 8.25rem;
@@ -12,13 +13,13 @@ $num_gray: #c3c5c6;
   position: absolute;
 }
 .seatItem {
-  border: 0.01rem solid black;
 }
 .numIndexWrapper {
   position: absolute;
   width: 0.26rem;
   top: 1rem;
   background-color: $num_gray;
+  color: $num_white;
 }
 .numIndex {
   position: absolute;

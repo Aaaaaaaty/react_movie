@@ -3,6 +3,7 @@ import { connect ,Provider} from 'react-redux'
 
 import {mapStateToProps,mapDispatchToProps} from '../Redux/Store/Store';
 import FilmSeat from '../Components/FilmSeat/FilmSeat'
+import FilmSeatSale from '../Components/FilmSeatSale/FilmSeatSale'
 
 class FilmChooseSeat extends Component {
   constructor(props){
@@ -12,11 +13,18 @@ class FilmChooseSeat extends Component {
     const { getFilmSeatList } = this.props
     getFilmSeatList("./data/filmSeat.json", "")
   }
+  addSeat(item) {
+    const { addFilmBuySeat } = this.props
+    addFilmBuySeat(item)
+    console.log(item);
+  }
   render() {
-    let { filmSeatList } = this.props
+    let { filmSeatList, filmBuyList } = this.props
+    console.log('filmBuyList', filmBuyList);
     return  (
               <div>
-                <FilmSeat filmSeatList={ filmSeatList } animationTime={ 200 }></FilmSeat>
+                <FilmSeat filmSeatList={ filmSeatList } animationTime={ 200 } addSeat={ this.addSeat.bind(this) }/>
+                <FilmSeatSale filmBuyList= { filmBuyList }/>
               </div>
             )
   }

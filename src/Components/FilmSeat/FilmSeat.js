@@ -152,7 +152,8 @@ class FilmSeat extends Component {
     })
     return result
   }
-  changeSeat(isSoldUrl, index) {
+  changeSeat(isSoldUrl, index, item) {
+    let { addSeat } = this.props
     if(isSoldUrl[index] === 'seat_white') {
       isSoldUrl[index] = 'seat_green'
     } else if(isSoldUrl[index] === 'seat_green') {
@@ -161,6 +162,7 @@ class FilmSeat extends Component {
     this.setState({
       isSoldUrl: isSoldUrl
     })
+    addSeat(item)
   }
   componentWillReceiveProps(nextProp) {
     let { filmSeatList } = nextProp
@@ -198,7 +200,7 @@ class FilmSeat extends Component {
           <img  key={ 'seatId' + index }
                 style={ style }
                 src={ `.\/images\/${isSoldUrl[index]}.png` }
-                onTouchTap={ this.changeSeat.bind(this, isSoldUrl, index) }
+                onTouchTap={ this.changeSeat.bind(this, isSoldUrl, index, item) }
                 className={ styles.seatItem }></img>
         )
       })

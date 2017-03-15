@@ -12,6 +12,17 @@ export const filmSeatList = (state = {}, action={})=>{
     }
 }
 
+export const filmBuyList = (state = {}, action={})=>{
+    switch(action.type){
+        case FilmChooseSeatActions.ADD_FILM_BUYSEAT:
+        return state
+        default:
+        return state
+    }
+}
+
+
 export default combineReducers({
   filmSeatList,
+  filmBuyList
 })

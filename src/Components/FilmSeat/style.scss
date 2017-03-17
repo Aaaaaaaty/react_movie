@@ -1,13 +1,24 @@
 $bg_gray: #f4f6f8;
 $num_gray: #c3c5c6;
 $num_white: #f0f0f1;
+$gray_word: #7d838e;
 .seatWrapper {
   width: 7.5rem;
   height: 8.25rem;
   background-color: $bg_gray;
-  position: fixed;
+  position: relative;
   overflow: hidden;
-  bottom: 2.04rem;
+  // bottom: 2.04rem;
+}
+.roomWrapper {
+  text-align: center;
+}
+.roomName {
+  font-size: 0.18rem;
+}
+.roomCenter {
+  font-size: 0.18rem;
+  color: $gray_word;
 }
 .seatItemWrapper {
   position: absolute;

@@ -24,8 +24,12 @@ class FilmChooseSeat extends Component {
   }
   render() {
     let { filmSeatList, filmBuyList } = this.props
+    let style = {
+      height: '1.8rem'
+    }
     return  (
               <div>
+                <div style={ style }>title</div>
                 <FilmSeat filmSeatList={ filmSeatList }
                           filmBuyList={ filmBuyList }
                           animationTime={ 200 }

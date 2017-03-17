@@ -4,12 +4,13 @@ $gray_bg: #afb7bf;
 $white_word: #ffffff;
 $black_word: #000000;
 .seatSaleWrapper {
-  position: fixed;
-  bottom: 0rem;
+  position: relative;
+  // bottom: 0rem;
 }
 .seatSaleWrapperC {
   composes: seatSaleWrapper;
 }
+
 .seatSalePosition {
   width: 6.9rem;
   height: 1.09rem;
@@ -63,6 +64,7 @@ $black_word: #000000;
 }
 .seatPriceTitle {
   font-size: 0.36rem;
+  color: $red_word;
 }
 .seatPriceSub {
   font-size: 0.2rem;

@@ -204,7 +204,7 @@ class FilmSeat extends Component {
           position: 'absolute',
           left: `${seatWidth * (item.xAxis - 1)}rem`,
           top: `${seatWidth * (item.yAxis - 1)}rem`,
-          width: `${wrapperWidth / maxSize.maxX}rem`,
+          width: `${seatWidth}rem`,
         }
         return (
           <img  key={ 'seatId' + index }
@@ -217,9 +217,9 @@ class FilmSeat extends Component {
       let listNum = this.getSeatColNum(seatList, maxSize, seatWidth)
       let style = {
         width: `${wrapperWidth}rem`,
-        height: `${ seatWrapperHeight }rem`,
+        height: `${ seatWrapperHeight + 1}rem`,
         left: `${ 3.75 + (left / 100) }rem`,
-        top: `${ 1 + top / 100 }rem`,
+        top: `${ top / 100 }rem`,
         marginLeft: `${ -wrapperWidth / 2 }rem`,
         transform: `scale(${scaleNum})`,
         MsTransform:`scale(${scaleNum})`, 	/* IE 9 */
@@ -237,6 +237,20 @@ class FilmSeat extends Component {
         height: `${ seatWrapperHeight * scaleNum }rem`,
         zIndex: 100
       }
+      let splitLineLeft = Math.floor(wrapperWidth / seatWidth / 2)
+      let styleSplitLine = {
+        width: '0.01rem',
+        height: `${seatWrapperHeight}rem`,
+        borderLeft: '0.01rem dashed #d1d6db',
+        position: 'absolute',
+        left: `${splitLineLeft * seatWidth}rem`
+      }
+      let styleListWrapper = {
+        width: `${wrapperWidth}rem`,
+        height: `${ seatWrapperHeight}rem`,
+        position: 'absolute',
+        top: '1rem'
+      }
       return (
         <div  className={ styles.seatWrapper }
               onTouchStart={ this.onTouchStartWrapper.bind(this) }>
@@ -246,7 +260,14 @@ class FilmSeat extends Component {
                 onTouchStart={ this.onTouchStart.bind(this) }
                 onTouchMove={ this.onTouchMove.bind(this) }
                 onTouchEnd={ this.onTouchEnd.bind(this) }>
-            { list }
+            <div className={ styles.roomWrapper }>
+              <p className={ styles.roomName }>{filmSeatList.roomName}</p>
+              <p className={ styles.roomCenter }>银幕中央</p>
+            </div>
+            <div style={ styleListWrapper}>
+              <span style={ styleSplitLine }></span>
+              { list }
+            </div>
           </div>
         </div>
       )

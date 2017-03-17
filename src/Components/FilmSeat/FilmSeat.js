@@ -153,20 +153,25 @@ class FilmSeat extends Component {
     return result
   }
   changeSeat(isSoldUrl, index, item) {
-    let { changeSeatConf } = this.props
+    let { changeSeatConf, filmBuyList } = this.props
     if(isSoldUrl[index] === 'seat_white') {
-      isSoldUrl[index] = 'seat_green'
-      changeSeatConf(item, isSoldUrl, 'add') //增加座位，底下标签增加同时座椅颜色列表
+      if(filmBuyList.item.length < 4) {
+        isSoldUrl[index] = 'seat_green'
+        changeSeatConf(item, isSoldUrl, 'add') //增加座位，底下标签增加同时座椅颜色列表
+      } else {
+        alert('最多选四个座位！')
+      }
+
     } else if(isSoldUrl[index] === 'seat_green') {
       isSoldUrl[index] = 'seat_white'
       changeSeatConf(item, isSoldUrl, 'delete') //删除座位
     }
 
   }
-  componentWillReceiveProps(nextProp) {
+  componentWillReceiveProps(nextProp) { //初次渲染座位按照filmSeatList,之后选座按照filmBuylist
     let { filmSeatList, filmBuyList } = nextProp
     let seatList = filmSeatList.seatArr
-      let isSoldUrl = []
+    let isSoldUrl = []
     if(seatList) {
       seatList.forEach((item, index) => {
         if(item.isSold) {

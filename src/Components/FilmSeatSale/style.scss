@@ -1,8 +1,14 @@
 $red_word: #fe4b37;
-$gray_line: #f4f6f8;
+$gray_line: #d1d5da;
+$gray_bg: #afb7bf;
+$white_word: #ffffff;
+$black_word: #000000;
 .seatSaleWrapper {
   position: fixed;
   bottom: 0rem;
+}
+.seatSaleWrapperC {
+  composes: seatSaleWrapper;
 }
 .seatSalePosition {
   width: 6.9rem;
@@ -12,10 +18,19 @@ $gray_line: #f4f6f8;
   flex-direction: row;
   margin-left: 0.3rem;
 }
+.seatSalePositionC {
+  width: 6.9rem;
+  height: 1.09rem;
+  line-height: 1.09rem;
+  font-size: 0.24rem;
+  display: flex;
+  flex-direction: row;
+  margin-left: 0.3rem;
+}
 .seatSalePositionItem {
   position: relative;
   color: $red_word;
-  width: 25%;
+  width: 1.56rem;
   height: 0.52rem;
   background: url(/images/seat_position_border.png) center no-repeat;
   background-size: 1.58rem 0.52rem;
@@ -31,11 +46,35 @@ $gray_line: #f4f6f8;
   height: 0.3rem;
   background: url(/images/seat_position_icon.png) center no-repeat;
   background-size: 0.12rem 0.12rem;
-  left: 1.4rem;
+  left: 1.3rem;
   top: 0.18rem;
 }
 .seatSaleBtn {
   width: 7.5rem;
   height: 0.95rem;
   font-size: 0.30rem;
+  border-top: 0.01rem solid $gray_line;
+}
+
+.seatPrice {
+  float: left;
+  margin-left: 0.2rem;
+  margin-top: 0.12rem;
+}
+.seatPriceTitle {
+  font-size: 0.36rem;
+}
+.seatPriceSub {
+  font-size: 0.2rem;
+  margin-left: 0.05rem;
+}
+.seatBtn {
+  float: right;
+  padding: 0.34rem 0.82rem;
+  background-color: $red_word;
+  color: $white_word;
+}
+.seatBtnC {
+  composes: seatBtn;
+  background-color: $gray_bg;
 }

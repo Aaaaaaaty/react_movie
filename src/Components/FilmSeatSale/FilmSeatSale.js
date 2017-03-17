@@ -21,8 +21,10 @@ class FilmSeatSale extends Component {
     changeSeatConf(data, isSoldUrl, 'delete')
   }
   render() {
-    let { filmBuyList } = this.props
-    if(filmBuyList.item.length) {
+    let { filmBuyList, filmSeatList } = this.props
+    let price = filmSeatList.price
+    let length = filmBuyList.item.length
+    if(length) {
       let list = filmBuyList.item.map((item, index) => {
         return (
           <span key={'seatSalePosition' + index}
@@ -35,12 +37,27 @@ class FilmSeatSale extends Component {
       return (
         <div className={ styles.seatSaleWrapper }>
           <div className={ styles.seatSalePosition }>{list}</div>
-          <div className={ styles.seatSaleBtn }></div>
+          <div className={ styles.seatSaleBtn }>
+            <div className={ styles.seatPrice }>
+              <p className={ styles.seatPriceTitle }>￥{price * length}</p>
+              <p className={ styles.seatPriceSub}>￥{price}×{length}</p>
+            </div>
+            <div className={ styles.seatBtn }>确认选座</div>
+          </div>
         </div>
       )
     } else {
       return (
-        <div></div>
+        <div className={ styles.seatSaleWrapperC }>
+          <div className={ styles.seatSalePositionC }>一次最多选择四个座位</div>
+          <div className={ styles.seatSaleBtn }>
+            <div className={ styles.seatPrice }>
+              <p className={ styles.seatPriceTitle }>￥0</p>
+              <p className={ styles.seatPriceSub}>￥{price}×0</p>
+            </div>
+            <div className={ styles.seatBtnC }>请先选座</div>
+          </div>
+        </div>
       )
     }
 

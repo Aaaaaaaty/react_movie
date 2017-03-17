@@ -22,8 +22,7 @@ export const fetchFilmSeatList = (url, postData) => {
     }
 }
 
-export const ADD_FILM_BUYSEAT="ADD_FILM_BUYSEAT"
-export const addFilmBuySeat = (data) => {
-  console.log('data',data);
-    return {type:"ADD_FILM_BUYSEAT",text:data}
+export const CHANGE_FILM_BUYSEAT="CHANGE_FILM_BUYSEAT"
+export const changeFilmBuySeatList = (data) => {
+    return {type:"CHANGE_FILM_BUYSEAT",text:data}
 }

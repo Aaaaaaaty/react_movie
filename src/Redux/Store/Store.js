@@ -25,7 +25,7 @@ export const mapStateToProps =(state)=> {
     filmScheduleList:state.filmScheduleReducer.filmScheduleList,//电影排期列表
     filmList:state.filmScheduleReducer.filmList,//电影简介列表
     filmSeatList:state.filmChooseSeatReducer.filmSeatList,//电影座位列表
-    filmBuyList:state.filmChooseSeatReducer.filmBuyList,//选中座位列表
+    filmBuyList:state.filmChooseSeatReducer.filmBuyList,//电影选座列表
   }
 }
 export const mapDispatchToProps=(dispatch)=> {
@@ -43,7 +43,7 @@ export const mapDispatchToProps=(dispatch)=> {
     getFilmScheduleList:(url,data)=>dispatch(FilmScheduleActions.fetchFilmScheduleList(url,data)), //获取电影排期列表
     getFilmList:(url,data)=>dispatch(FilmScheduleActions.fetchFilmList(url,data)),//获取电影简介列表
     getFilmSeatList:(url,data)=>dispatch(FilmChooseSeatActions.fetchFilmSeatList(url,data)),//获取电影座位列表
-    addFilmBuySeat:()=>dispatch(FilmChooseSeatActions.addFilmBuySeat(data)),//选中座位购票
+    changeFilmBuySeatList:(data)=>dispatch(FilmChooseSeatActions.changeFilmBuySeatList(data))//选中座位购票
   }
 }
 

@@ -153,21 +153,20 @@ class FilmSeat extends Component {
     return result
   }
   changeSeat(isSoldUrl, index, item) {
-    let { addSeat } = this.props
+    let { changeSeatConf } = this.props
     if(isSoldUrl[index] === 'seat_white') {
       isSoldUrl[index] = 'seat_green'
+      changeSeatConf(item, isSoldUrl, 'add') //增加座位，底下标签增加同时座椅颜色列表
     } else if(isSoldUrl[index] === 'seat_green') {
       isSoldUrl[index] = 'seat_white'
+      changeSeatConf(item, isSoldUrl, 'delete') //删除座位
     }
-    this.setState({
-      isSoldUrl: isSoldUrl
-    })
-    addSeat(item)
+
   }
   componentWillReceiveProps(nextProp) {
-    let { filmSeatList } = nextProp
+    let { filmSeatList, filmBuyList } = nextProp
     let seatList = filmSeatList.seatArr
-    let isSoldUrl = []
+      let isSoldUrl = []
     if(seatList) {
       seatList.forEach((item, index) => {
         if(item.isSold) {
@@ -178,6 +177,12 @@ class FilmSeat extends Component {
       })
       this.setState({
         isSoldUrl: isSoldUrl
+      }, () => {
+        if(filmBuyList.isSoldUrl.length) {
+          this.setState({
+            isSoldUrl: filmBuyList.isSoldUrl
+          })
+        }
       })
     }
   }

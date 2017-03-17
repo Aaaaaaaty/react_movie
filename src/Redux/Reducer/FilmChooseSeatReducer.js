@@ -12,10 +12,19 @@ export const filmSeatList = (state = {}, action={})=>{
     }
 }
 
-export const filmBuyList = (state = {}, action={})=>{
+export const filmBuyList = (state = {item:[],isSoldUrl:{},type:''}, action={})=>{
     switch(action.type){
-        case FilmChooseSeatActions.ADD_FILM_BUYSEAT:
-        return state
+        case FilmChooseSeatActions.CHANGE_FILM_BUYSEAT:
+        let _state = Object.assign({}, state)
+        if(action.text.type === 'add') {
+          _state.item.push(action.text.item)
+        } else {
+          let index = _state.item.indexOf(action.text.item)
+          _state.item.splice(index, 1)
+        }
+        _state.isSoldUrl = action.text.isSoldUrl
+        _state.type = action.text.type
+        return _state
         default:
         return state
     }

@@ -13,18 +13,26 @@ class FilmChooseSeat extends Component {
     const { getFilmSeatList } = this.props
     getFilmSeatList("./data/filmSeat.json", "")
   }
-  addSeat(item) {
-    const { addFilmBuySeat } = this.props
-    addFilmBuySeat(item)
-    console.log(item);
+  changeSeatConf(item, isSoldUrl, type) {
+    const { changeFilmBuySeatList } = this.props
+    let data = {
+      item: item, //座位信息
+      isSoldUrl: isSoldUrl, //所有座位颜色列表
+      type: type
+    }
+    changeFilmBuySeatList(data)
   }
   render() {
     let { filmSeatList, filmBuyList } = this.props
-    console.log('filmBuyList', filmBuyList);
     return  (
               <div>
-                <FilmSeat filmSeatList={ filmSeatList } animationTime={ 200 } addSeat={ this.addSeat.bind(this) }/>
-                <FilmSeatSale filmBuyList= { filmBuyList }/>
+                <FilmSeat filmSeatList={ filmSeatList }
+                          filmBuyList={ filmBuyList }
+                          animationTime={ 200 }
+                          changeSeatConf={ this.changeSeatConf.bind(this) }/>
+                <FilmSeatSale filmBuyList= { filmBuyList }
+                              filmSeatList={ filmSeatList }
+                              changeSeatConf={ this.changeSeatConf.bind(this) }/>
               </div>
             )
   }

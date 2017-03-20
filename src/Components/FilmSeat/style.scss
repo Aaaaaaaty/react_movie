@@ -2,6 +2,25 @@ $bg_gray: #f4f6f8;
 $num_gray: #c3c5c6;
 $num_white: #f0f0f1;
 $gray_word: #7d838e;
+$black_bg: #000000;
+$red_border: #ff0000;
+.seatSmallBorder {
+  border: 0.01rem solid $red_border;
+}
+.seatSmallShow {
+  position: absolute;
+  width: 2.5rem;
+  height: 2rem;
+  z-index: 1000;
+
+}
+.seatSmallShowBg {
+  composes: seatSmallShow;
+  background-color: $black_bg;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 1;
+}
 .seatWrapper {
   width: 7.5rem;
   height: 8.25rem;

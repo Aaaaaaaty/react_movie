@@ -4,7 +4,6 @@ import { connect ,Provider} from 'react-redux'
 import {mapStateToProps,mapDispatchToProps} from '../Redux/Store/Store';
 import FilmSeat from '../Components/FilmSeat/FilmSeat'
 import FilmSeatSale from '../Components/FilmSeatSale/FilmSeatSale'
-
 class FilmChooseSeat extends Component {
   constructor(props){
      super(props);

@@ -16,47 +16,50 @@ class FilmSeat extends Component {
         top: 0,
         animationTime: 0,
         dis: 0,
-        isScaleFinish: true,
         wrapperWidth: 5.25, //选座框外层宽度,
         wrapperSmallWidth: 1.8,
-        isSoldUrl: 'seat_white'
+        isSoldUrl: 'seat_white',
+        isSmallShow: 0
      }
   }
   onTouchStart(e) {
     e.preventDefault()
-    let { left, top, scaleNum } = this.state
+    let { left, top, scaleNum, isSmallShow } = this.state
+    let state = {}
     if(e.touches.length === 1) {
       let startX = e.touches[0].clientX
       let startY = e.touches[0].clientY
-      this.setState({
+      state = {
         startX: startX,
         startY: startY,
         lastDisX: left,
-        lastDisY: top
-      })
+        lastDisY: top,
+        isSmallShow: 1
+      }
     } else {
       let dis = this.calDistance(e)
-      this.setState({
-        dis: dis,
-        scaleOld: scaleNum
-      })
+        state = {
+          dis: dis,
+          isSmallShow: 1
+        }
     }
+    this.setState(state)
   }
   onTouchMove(e) {
     e.preventDefault()
-    let { startX, startY, lastDisX, lastDisY, dis, scaleOld, isScaleFinish } = this.state
+    let { startX, startY, lastDisX, lastDisY, dis, scaleNum, scaleOld } = this.state
       if(e.touches.length === 1) {
         let moveX = e.touches[0].clientX
         let moveY = e.touches[0].clientY
         let disX = moveX - startX + lastDisX
         let disY = moveY - startY + lastDisY
-        console.log(scaleOld)
-        if(scaleOld === 1) {
-          if(disX > 25) disX = 25
-          if(disX < -30) disX = -30
-          if(disY < -20) disY = -20
-          if(disY > 11) disY = 11
-        }
+        if(disX > 75 * scaleNum) disX = 75 * scaleNum
+        if(disX < -110 * scaleNum) disX = -110 * scaleNum
+        if(disY < -55 * scaleNum) disY = -55 * scaleNum
+        if(disY > 40 * scaleNum) disY = 40 * scaleNum
+        // scaleNum = 2
+        console.log('disX', disX);
+        console.log('disY', disY);
         this.setState({
           moveX: moveX,
           moveY: moveY,
@@ -65,12 +68,11 @@ class FilmSeat extends Component {
         })
       } else if(e.touches.length === 2) {
         let moveDis = this.calDistance(e)
-        let scaleNum = moveDis / dis
-        let scaleResult = scaleNum + scaleOld - 1
-        if( scaleResult > 2.5) scaleResult = 2.5
-        if( scaleResult < 1) scaleResult = 1
+        let scaleNumResult = moveDis / dis + scaleOld - 1
+        if( scaleNumResult > 2) scaleNumResult = 2
+        if( scaleNumResult < 1) scaleNumResult = 1
         this.setState({
-          scaleNum: scaleResult,
+          scaleNum: scaleNumResult,
         })
       }
   }
@@ -78,23 +80,6 @@ class FilmSeat extends Component {
     e.preventDefault()
     let { scaleNum, left, top } = this.state
     let { animationTime } = this.props
-    // if(scaleNum < 1) {
-    //   scaleNum = 1
-    //   this.setState({
-    //     animationTime: animationTime,
-    //     left: 0,
-    //     top: 0,
-    //     scaleNum: scaleNum,
-    //     isScaleFinishL: false
-    //   }, () => {
-    //     setTimeout(() => {
-    //       this.setState({
-    //         animationTime: 0,
-    //         isScaleFinish: true
-    //       })
-    //     }, animationTime)
-    //   })
-    // } else {
     if(scaleNum === 1) {
       setTimeout(() => {
         this.setState({
@@ -111,8 +96,10 @@ class FilmSeat extends Component {
         })
       }, animationTime)
     }
-
-    // }
+    this.setState({
+      scaleOld: scaleNum,
+      isSmallShow: 0
+    })
 
   }
   calDistance(e) {
@@ -212,7 +199,8 @@ class FilmSeat extends Component {
   }
   render() {
     let { filmSeatList } = this.props
-    let { left, top, scaleNum, animationTime, wrapperWidth, isSoldUrl, wrapperSmallWidth } = this.state
+    let { left, top, scaleNum, animationTime, wrapperWidth, isSoldUrl, wrapperSmallWidth, scaleOld, isSmallShow } = this.state
+    // scaleNum = 2
     let seatList = filmSeatList.seatArr
     if(seatList) {
       let maxSize = this.getWrapperSize(seatList)
@@ -299,10 +287,10 @@ class FilmSeat extends Component {
       }
       let styleSeatSmallWrapperBorder = {
         position: 'absolute',
-        width: `${wrapperSmallWidth + 0.1}rem`,
-        height: `${wrapperSmallHeight + 0.1}rem`,
-        top: `${0.1 - top / 100 }rem`,
-        left: `${1.25 - left / 100 }rem`, //1.25为外层小窗宽度一半
+        width: `${(wrapperSmallWidth + 0.1)}rem`,
+        height: `${(wrapperSmallHeight + 0.1)}rem`,
+        top: `${0.1 - top / 100 / scaleNum / 2 }rem`,
+        left: `${1.25 - left / 100 / scaleNum / 2}rem`, //1.25为外层小窗宽度一半, 3为选座和小图宽度比
         marginLeft: `${-(wrapperSmallWidth) / 2 - 0.1}rem`,
         zIndex:1000,
         transform: `scale(${1 / scaleNum})`,
@@ -311,9 +299,17 @@ class FilmSeat extends Component {
         WebkitTransform:`scale(${1 / scaleNum})`, /* Safari 和 Chrome */
         OTransform:`scale(${1 / scaleNum})`,
       }
+      let styleSeatSmallShow = {
+        opacity: isSmallShow,
+        WebkitTransition:`all ${animationTime}ms linear`,
+        MozTransition:`all ${animationTime}ms linear`,
+        OTransition:`all ${animationTime}ms linear`,
+        MsTransition:`all ${animationTime}ms linear`,
+        transition:`all ${animationTime}ms linear`,
+      }
       return (
         <div>
-          <div className={ styles.seatSmallShow}>
+          <div style={ styleSeatSmallShow } className={ styles.seatSmallShow}>
             <div className={ styles.seatSmallShowBg }></div>
             <div style={ styleSeatSmallWrapperList }>
               {listSmall}

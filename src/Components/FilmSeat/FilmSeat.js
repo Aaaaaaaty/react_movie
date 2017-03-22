@@ -25,6 +25,7 @@ class FilmSeat extends Component {
   onTouchStart(e) {
     e.preventDefault()
     let { left, top, scaleNum, isSmallShow } = this.state
+    let { animationTime } = this.props
     let state = {}
     if(e.touches.length === 1) {
       let startX = e.touches[0].clientX
@@ -43,6 +44,7 @@ class FilmSeat extends Component {
           isSmallShow: 1
         }
     }
+    state.animationTimeSmall = animationTime
     this.setState(state)
   }
   onTouchMove(e) {
@@ -58,8 +60,6 @@ class FilmSeat extends Component {
         if(disY < -55 * scaleNum) disY = -55 * scaleNum
         if(disY > 40 * scaleNum) disY = 40 * scaleNum
         // scaleNum = 2
-        console.log('disX', disX);
-        console.log('disY', disY);
         this.setState({
           moveX: moveX,
           moveY: moveY,
@@ -85,7 +85,8 @@ class FilmSeat extends Component {
         this.setState({
           animationTime: animationTime,
           left: 0,
-          top: 0
+          top: 0,
+          isSmallShow: 0
         }, () => {
           setTimeout(() => {
             this.setState({
@@ -98,7 +99,6 @@ class FilmSeat extends Component {
     }
     this.setState({
       scaleOld: scaleNum,
-      isSmallShow: 0
     })
 
   }
@@ -199,7 +199,7 @@ class FilmSeat extends Component {
   }
   render() {
     let { filmSeatList } = this.props
-    let { left, top, scaleNum, animationTime, wrapperWidth, isSoldUrl, wrapperSmallWidth, scaleOld, isSmallShow } = this.state
+    let { left, top, scaleNum, animationTime, wrapperWidth, isSoldUrl, wrapperSmallWidth, scaleOld, isSmallShow, animationTimeSmall } = this.state
     // scaleNum = 2
     let seatList = filmSeatList.seatArr
     if(seatList) {
@@ -301,11 +301,11 @@ class FilmSeat extends Component {
       }
       let styleSeatSmallShow = {
         opacity: isSmallShow,
-        WebkitTransition:`all ${animationTime}ms linear`,
-        MozTransition:`all ${animationTime}ms linear`,
-        OTransition:`all ${animationTime}ms linear`,
-        MsTransition:`all ${animationTime}ms linear`,
-        transition:`all ${animationTime}ms linear`,
+        WebkitTransition:`all ${animationTimeSmall}ms linear`,
+        MozTransition:`all ${animationTimeSmall}ms linear`,
+        OTransition:`all ${animationTimeSmall}ms linear`,
+        MsTransition:`all ${animationTimeSmall}ms linear`,
+        transition:`all ${animationTimeSmall}ms linear`,
       }
       return (
         <div>

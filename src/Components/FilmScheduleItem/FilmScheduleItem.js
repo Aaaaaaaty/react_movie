@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
 import classNames from 'classnames/bind'
 import styles from './style'
 
@@ -163,7 +164,12 @@ class FilmScheduleItem extends Component {
         let btn = (() =>{
           if (item.canBuy){
             return (
-              <span className={ styles.buyBtn }>购票</span>
+              <Link to={{ pathname: '/filmChooseSeat',
+                          state: {  language: item.language,
+                                    dimensional: item.dimensional,
+                                    time: item.releaseTime,
+                                    startTime: startTime} }}
+                    className={ styles.buyBtn }>购票</Link>
             )
           } else {
             return (

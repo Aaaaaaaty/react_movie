@@ -1,0 +1,58 @@
+$gray_word: #7d838e;
+$gray_line: #d1d5da;
+$gray_title: #a6a9b0;
+$white: #ffffff;
+.movieMsgWrapper {
+  font-size: 0.24rem;
+}
+.movieTitleFlex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 0.8rem;
+}
+.movieTitle {
+  font-size: 0.32rem;
+  font-weight: 600;
+}
+.movieMsgFlex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 6.8rem;
+  height: 0.95rem;
+  margin: 0 auto;
+}
+.movieDate {
+  color: $gray_title;
+  font-size: 0.24rem;
+}
+.movieMsgBtn {
+  padding: 0.11rem 0.09rem;
+  border: 0.01rem solid $gray_line;
+  border-radius: 0.07rem;
+}
+.seatWrapperAll {
+  border-top: 0.01rem solid $gray_line;
+}
+.seatWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.2rem;
+  width: 5.2rem;
+  height: 0.55rem;
+  margin: 0 auto;
+  color: $gray_word;
+}
+.seatItem {
+  display: flex;
+}
+.seatImg {
+  height: 0.3rem;
+}
+.seatWord {
+  // margin-left: 0.2rem;
+}

@@ -1,12 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { connect ,Provider} from 'react-redux'
 
-import {mapStateToProps,mapDispatchToProps} from '../Redux/Store/Store';
+import {mapStateToProps,mapDispatchToProps} from '../Redux/Store/Store'
 import FilmSeat from '../Components/FilmSeat/FilmSeat'
 import FilmSeatSale from '../Components/FilmSeatSale/FilmSeatSale'
+import FilmSeatTitle from '../Components/FilmSeatTitle/FilmSeatTitle'
+
 class FilmChooseSeat extends Component {
   constructor(props){
-     super(props);
+     super(props)
   }
   componentWillMount() {
     const { getFilmSeatList } = this.props
@@ -22,13 +24,13 @@ class FilmChooseSeat extends Component {
     changeFilmBuySeatList(data)
   }
   render() {
-    let { filmSeatList, filmBuyList } = this.props
+    let { filmSeatList, filmBuyList, location } = this.props
     let style = {
       height: '1.8rem'
     }
     return  (
               <div>
-                <div style={ style }>title</div>
+                <FilmSeatTitle location={ location }/>
                 <FilmSeat filmSeatList={ filmSeatList }
                           filmBuyList={ filmBuyList }
                           animationTime={ 200 }
@@ -42,4 +44,4 @@ class FilmChooseSeat extends Component {
 }
 
 const FilmChooseSeatC = connect(mapStateToProps,mapDispatchToProps)(FilmChooseSeat)
-export default FilmChooseSeatC;
+export default FilmChooseSeatC

@@ -13,7 +13,7 @@ $white: #ffffff;
 }
 .movieTitle {
   font-size: 0.32rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 .movieMsgFlex {
   display: flex;
@@ -49,10 +49,12 @@ $white: #ffffff;
 }
 .seatItem {
   display: flex;
+  width: auto;
 }
 .seatImg {
   height: 0.3rem;
 }
 .seatWord {
   // margin-left: 0.2rem;
+  width: 0.6rem;
 }

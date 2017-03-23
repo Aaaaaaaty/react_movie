@@ -51,7 +51,7 @@ class FilmSeat extends Component {
       <div className={ styles.movieMsgWrapper }>
         <div className={ styles.movieMsgFlex}>
           <div className={ styles.movieTitleFlex }>
-            <p className={ styles.movieTitle}>北京完美影城(望京店)</p>
+            <p className={ styles.movieTitle}>北京完美影城（望京店）</p>
             <p className={ styles.movieDate }> <span>{ dayCn }{month}月{week}日</span>
                 <span>{ movieMsg.startTime }</span>
                 <span>{movieMsg.language}{movieType}</span></p>

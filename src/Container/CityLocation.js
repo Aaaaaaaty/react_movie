@@ -17,8 +17,8 @@ class CityLocation extends PureComponent {
      }
     componentWillMount(){
          const {getCityMap,getCityLocation} = this.props;
-         getCityMap('http://10.2.45.84/data/citys.json',"")
-         getCityLocation('http://10.2.45.84/data/cityName.json','')
+         getCityMap('./data/citys.json',"")
+         getCityLocation('./data/cityName.json','')
     }
     render() {
 
@@ -41,7 +41,7 @@ class CityLocation extends PureComponent {
 
 
 
-   var locationNode=<LoctionType cityData={loctionCtiy}  recheck={()=>{ getCityLocation('http://10.2.45.84/data/cityName.json',"")}}  />
+   var locationNode=<LoctionType cityData={loctionCtiy}  recheck={()=>{ getCityLocation('./data/cityName.json',"")}}  />
 
 
     var navNode=<NavNode navTag={cityMap.navData}   />

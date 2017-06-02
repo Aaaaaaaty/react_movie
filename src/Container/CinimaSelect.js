@@ -25,7 +25,7 @@ class CinimaSelect extends Component {
              
         }
          //console.log(code)
-         fetchCityCinimas('http://10.2.45.84/data/cinima.json',"")
+         fetchCityCinimas('./data/cinima.json',"")
     }
   render() {
 	  

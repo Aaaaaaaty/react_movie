@@ -26,8 +26,11 @@ build/Release
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> a6722a3013315f8caaaa0688ea6cb652470884c9
 # IDEA/Webstorm project files
 .idea
 *.iml

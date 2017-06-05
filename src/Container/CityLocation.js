@@ -41,7 +41,7 @@ class CityLocation extends PureComponent {
 
 
 
-   var locationNode=<LoctionType cityData={loctionCtiy}  recheck={()=>{ getCityLocation('http://10.2.45.84/data/cityName.json',"")}}  />
+   var locationNode=<LoctionType cityData={loctionCtiy}  recheck={()=>{ getCityLocation('./data/cityName.json',"")}}  />
 
 
     var navNode=<NavNode navTag={cityMap.navData}   />

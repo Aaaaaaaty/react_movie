@@ -1,0 +1,129 @@
+$gray_word: #7d838e;
+$gray_line: #d1d6da;
+$blue_word: #222833;
+$white_word: #a6a9b0;
+$blue_bg: #5e9db9;
+.iconLine {
+  height: 0.6rem;
+  background-color: black;
+  opacity: 0.5;
+}
+.iconLineSummary {
+  height: 0.6rem;
+  border-bottom: 0.01rem solid $gray_line;
+}
+.icon {
+  display: block;
+  width: 0.33rem;
+  height: 0.20rem;
+  margin: 0rem auto;
+  padding-top: 0.4rem;
+}
+.content {
+  width: 7.5rem;
+  background-color: white;
+}
+.posterUrl {
+  position: relative;
+  top: -0.6rem;
+  left: 0.3rem;
+  display: inline-block;
+}
+.profileWrapper {
+  float: right;
+  width: 4rem;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+}
+.profileTitle {
+  font-size: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+.profileSub {
+  font-size: 0.24rem;
+  color: $gray_word;
+}
+.summary {
+  font-size: 0.28rem;
+  color: #222833;
+  line-height: 0.42rem;
+  text-indent: 0.35rem;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: -0.3rem;
+  width: 7rem;
+}
+.peopleListFlex {
+  display: flex;
+  flex-direction: row;
+  width: 7.2rem;
+  overflow: auto;
+  text-align: center;
+  margin-left: 0.3rem;
+  -webkit-overflow-scrolling: touch;
+}
+.crews {
+  font-size: 0.28rem;
+  color: $blue_word;
+  font-weight: 600;
+  margin-left: 0.3rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.34rem;
+}
+.crewsImg {
+  width: 0.08rem;
+  position: relative;
+  top: 0.06rem;
+  margin-right: 0.1rem;
+}
+.crewsTitle {
+  font-size: 0.28rem;
+  font-weight: 600;
+}
+.crewsSub {
+  font-size: 0.2rem;
+  color: $white_word;
+}
+.bottomBtn {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  height: 0.96rem;
+  width: 7.5rem;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  font-size: 0.24rem;
+}
+.bottom {
+  width: 7.5rem;
+  position: fixed;
+  z-index: 1;
+  bottom: 0rem;
+}
+.bottomBtnS {
+  height: 0.96rem;
+  width: 7.5rem;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  font-size: 0.24rem;
+}
+.bottomItem {
+  width: 33.33%;
+  text-align: center;
+  line-height: 0.96rem;
+}
+.bottomItemImg {
+  width: 0.4rem;
+  margin-right: 0.1rem;
+  position: relative;
+  top: 0.1rem;
+}
+
+.bottomItemBuy {
+  composes: bottomItem;
+  background-color: $blue_bg;
+  color: white;
+  text-decoration: none;
+}

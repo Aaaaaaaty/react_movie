@@ -1,0 +1,88 @@
+$gray_title: #222833;
+$gray_desc: #7d838e;
+$gray_price: #222833;
+
+
+
+.filmGoodsList {
+	height: 2.6rem;
+	background-color: white;
+	border: 0.01rem solid red;
+	border-radius: 0.06rem;
+	margin: 0 0.3rem 0.3rem 0.3rem;
+	.leftItem {
+		float: left;
+		width: 2rem;
+		height: 2rem;
+		margin: 0.3rem;
+		background-image: url(../../images/goods.png);
+		background-size: contain;
+	}
+	.rightItem {
+		margin: 0.3rem 0.3rem 0.3rem 2.6rem;
+		height: 2rem;
+		border: 0.01rem solid black;
+		.title {
+			font-size: 0.3rem;
+			color: $gray_title;
+			line-height: 0.7rem;
+		}
+		.desc {
+			font-size: 0.24rem;
+			color: $gray_desc;
+			line-height: 0.4rem;
+			//text-overflow: ellipsis;
+			//overflow: hidden;
+			white-space: normal;
+		}
+		.price {
+			font-size: 0.36rem;
+			color: $gray_price;
+			line-height: 0.7rem;
+			.dollar {
+				font-size:0.1rem;
+				color: $gray_price;
+			}
+			.add {
+				width: 0.5rem;
+				height: 0.5rem;
+				float: right;
+				margin-top: 0.05rem;
+			}
+			.middleNumShow {
+				float: right;
+				font-size: 0.3rem;
+				margin: 0 0.15rem 0.07rem 0.15rem;
+				color: $gray_price;
+			}
+			.middleNumHidden {
+				float: right;
+				font-size: 0.3rem;
+				margin: 0 0.15rem 0.07rem 0.15rem;
+				color: $gray_price;
+				display: none;
+			}
+			.minusShow {
+				width: 0.5rem;
+				height: 0.5rem;
+				float: right;
+				margin-top: 0.05rem;
+			}
+			.minusHidden {
+				display: none;
+				width: 0.5rem;
+				height: 0.5rem;
+				float: right;
+				margin-top: 0.05rem;
+			}
+			.minus {
+				width: 0.5rem;
+				height: 0.5rem;
+				float: right;
+				margin-top: 0.05rem;
+				// background: url(../../images/icon_add.png) no-repeat center center;
+				//background-size: 0.36rem 0.36rem;
+			}
+		}
+	}
+}

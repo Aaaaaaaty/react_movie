@@ -17,8 +17,8 @@ class CityLocation extends PureComponent {
      }
     componentWillMount(){
          const {getCityMap,getCityLocation} = this.props;
-         getCityMap('http://10.2.45.84/data/citys.json',"")
-         getCityLocation('http://10.2.45.84/data/cityName.json','')
+         getCityMap('./data/citys.json',"")
+         getCityLocation('./data/cityName.json','')
     }
     render() {
 
@@ -45,13 +45,13 @@ class CityLocation extends PureComponent {
 
 
     var navNode=<NavNode navTag={cityMap.navData}   />
-                            
+
         var   headData={"title":"选择城市","ltitle":"关闭","lclick":"/cinimaSelect/default"};
 
 
                     if(searchResult.result.length>0&&searching){
                             return (<div>
-                                     <Header   headerData={headData} />    
+                                     <Header   headerData={headData} />
                                     <SearchInput origindata={cityMap.originData} searching={searching} searchingWord={searchingWord} searchingStart={searchingStart} searchEnd={searchEnd} searchResult={searchResult} />
 
                                     {searchArr}</div>)
@@ -59,7 +59,7 @@ class CityLocation extends PureComponent {
                     }
                     else{
                          return (<div>
-                             <Header   headerData={headData} />               
+                             <Header   headerData={headData} />
                             <SearchInput origindata={cityMap.originData} searching={searching} searchingWord={searchingWord} searchingStart={searchingStart} searchEnd={searchEnd} searchResult={searchResult} />
                             {locationNode}
                             {cityNodes}

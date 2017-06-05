@@ -4,12 +4,19 @@ $gray_subtitle: #7d838e;
 $blue_tip: #95afc9;
 $green_tip: #7ec235;
 $white: #ffffff;
+.filmDetailWrapper {
+  width: 5.59rem;
+  display: flex;
+  text-decoration: none;
+  color: black;
+}
 
 .filmFlex {
   display: -webkit-flex;
   display: flex;
   flex-direction: row;
   margin-top: 0.3rem;
+  margin-left: 0.2rem;
   .filmContent {
     width: 4.09rem;
     .title {
@@ -60,6 +67,7 @@ $white: #ffffff;
   border-radius: 1rem;
   font-size: .28rem;
   line-height: 1.8rem;
+  text-decoration: none;
 }
 .btn_type_1 {
   composes: btn;

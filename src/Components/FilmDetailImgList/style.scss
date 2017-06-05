@@ -1,0 +1,14 @@
+.wrapper {
+  background-color: black;
+  height: 4.16rem;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.wrapper:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.imgListWrapper {
+  float: left;
+}

@@ -54,6 +54,15 @@ const filmList = {
     }
 }
 
+import FilmGoodsListPage from '../Container/FilmGoodsList';
+const filmGoodsList = {
+    path:'filmGoodsList',
+    getComponent(nextState,cb){require.ensure([],(require)=>{
+            return cb(null,FilmGoodsListPage)
+        })
+    }
+}
+
 import FilmScheduleListPage from '../Container/FilmScheduleList';
 const FilmScheduleList = {
     path:'filmScheduleList',
@@ -72,6 +81,15 @@ const FilmChooseSeat = {
     }
 }
 
+import FilmDetailPage from '../Container/FilmDetail';
+const FilmDetail = {
+    path:'filmDetail',
+    getComponent(nextState,cb){require.ensure([],(require)=>{
+            return cb(null,FilmDetailPage)
+        })
+    }
+}
+
 
 
 import CinimaSelect from '../Container/CinimaSelect';
@@ -86,7 +104,7 @@ const cinimaSelectList  = {
 
 const rootRoute ={
     component:Roots,
-    childRoutes:[UserInfor,Index,cityLocation,filmList,cinimaSelectList,FilmScheduleList,FilmChooseSeat]
+    childRoutes:[UserInfor,Index,cityLocation,filmList,cinimaSelectList,FilmScheduleList,FilmChooseSeat,FilmDetail, filmGoodsList]
 }
 
 

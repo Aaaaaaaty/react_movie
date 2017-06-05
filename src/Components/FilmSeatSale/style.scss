@@ -4,8 +4,9 @@ $gray_bg: #afb7bf;
 $white_word: #ffffff;
 $black_word: #000000;
 .seatSaleWrapper {
-  position: relative;
-  // bottom: 0rem;
+  position: fixed;
+  bottom: 0rem;
+  background-color: white;
 }
 .seatSaleWrapperC {
   composes: seatSaleWrapper;

@@ -25,8 +25,17 @@ class FilmScheduleList extends Component {
   //   console.log('nextProps', nextProps.filmScheduleList);
   // }
   render() {
-    let { filmScheduleList, filmList } = this.props
+    let { filmScheduleList, filmList, location } = this.props
     let { listType } = this.state
+    let filmListResult = filmList[listType]
+    let filmName = location.state.name
+    filmListResult.forEach((item, index) => {
+      if(item.name === filmName) {
+        let firstItem = filmListResult.splice(index, 1)[0]
+        console.log('firstItem', filmListResult)
+        filmListResult.splice(1, 0, firstItem)
+      }
+    })
     if(filmScheduleList.length) {
       let style = {
         position: 'fixed',
@@ -34,7 +43,7 @@ class FilmScheduleList extends Component {
       }
         return  (
                   <div style = { style }>
-                    <FilmScheduleImg data={ filmList[listType] } animationTime={300} requestList={this.requestList.bind(this)} />
+                    <FilmScheduleImg data={ filmListResult } animationTime={300} requestList={this.requestList.bind(this)} />
                     <FilmScheduleItem data={ filmScheduleList } animationTime={300} />
                   </div>
                 )

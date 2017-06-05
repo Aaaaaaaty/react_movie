@@ -1,0 +1,50 @@
+$price: #fe4b37;
+$count: #7d838e;
+
+.mainContentHidden {
+	border: 0.01rem solid red;
+	width: 100%;
+	height: 0.96rem;
+	background-color: white;
+	display: none;
+}
+
+.mainContentShow {
+	border: 0.01rem solid red;
+	width: 100%;
+	height: 0.96rem;
+	background-color: white;
+	.leftContent {
+		display: inline-block;
+		height: 100%;
+		position: relative;
+		.price {
+			display: inline-block;
+			vertical-align: top;
+			color: $price;
+			font-size: 0.36rem;
+			font-family: "Microsoft Yahei";
+			margin-top: 0.07rem;
+		}
+		.counter {
+			color: $count;
+			font-size: 0.2rem;
+			width: 1rem;
+			position: absolute;
+			top: 0.55rem;
+			left: 0.1rem;
+		}
+	}
+	.btn {
+		float: right;
+		display: inline-block;
+		width: 33.33%;
+		height: 100%;
+		background-color: $price;
+		text-align: center;
+		line-height: 0.96rem;
+		color: white;
+		font-size: 0.3rem;
+		font-family: "Microsoft Yahei";
+	}
+}

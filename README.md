@@ -1,5 +1,4 @@
-# prwd_movie
-> 影院react版
+# 基于react的影院购票应用
 
 > 技术栈：react redux sass webpack es6
 

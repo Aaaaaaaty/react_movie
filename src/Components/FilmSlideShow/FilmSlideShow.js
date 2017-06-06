@@ -4,17 +4,25 @@ import styles from './style'
 class FilmSlideShow extends Component {
 	constructor (props) {
 		super(props);
+		this.lock = false; 
 	}
+
+	componentWillUnmount(){  
+        this.lock = true;  
+    }  
+
 	componentWillMount () {
 		let { filmImgListSliderArr, animationTime, sliderImgWidth, sliderImgHeight} = this.props
-		this.setState({
-			filmImgListSliderArr: filmImgListSliderArr,
-			startX: 0,
-			distance: 0,
-			animationTime: animationTime,
-			sliderImgWidth: sliderImgWidth,
-			sliderImgHeight: sliderImgHeight
-		})
+		if(!this.lock){  
+			this.setState({
+				filmImgListSliderArr: filmImgListSliderArr,
+				startX: 0,
+				distance: 0,
+				animationTime: animationTime,
+				sliderImgWidth: sliderImgWidth,
+				sliderImgHeight: sliderImgHeight
+			})
+		}
 	}
 	componentWillUpdate () {
 

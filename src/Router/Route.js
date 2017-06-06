@@ -38,7 +38,7 @@ const UserInfor  = {
 
 import CityLocationPage from '../Container/CityLocation';
 const cityLocation  = {
-    path:'cityLocation',
+    path:'/',
     getComponent(nextState,cb){require.ensure([],(require)=>{
             return cb(null,CityLocationPage)
         })

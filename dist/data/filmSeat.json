@@ -1,0 +1,267 @@
+{
+    "roomName":"二号放映厅",
+    "price":"33.00",
+    "seatArr":[{
+      "seatId":"0000002-1-1","rowId": 1,"columnId": 1,"xAxis":3,"yAxis":1,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-1-2","rowId": 1,"columnId": 2,"xAxis":4,"yAxis":1,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-1-3","rowId": 1,"columnId": 3,"xAxis":5,"yAxis":1,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-1-4","rowId": 1,"columnId": 4,"xAxis":6,"yAxis":1,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-2-1","rowId": 2,"columnId": 1,"xAxis":1,"yAxis":2,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-2-2","rowId": 2,"columnId": 2,"xAxis":2,"yAxis":2,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-2-3","rowId": 2,"columnId": 3,"xAxis":3,"yAxis":2,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-2-4","rowId": 2,"columnId": 4,"xAxis":4,"yAxis":2,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-3-1","rowId": 3,"columnId": 1,"xAxis":2,"yAxis":3,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-3-2","rowId": 3,"columnId": 2,"xAxis":3,"yAxis":3,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-3-3","rowId": 3,"columnId": 3,"xAxis":4,"yAxis":3,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-3-4","rowId": 3,"columnId": 4,"xAxis":5,"yAxis":3,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-5-1","rowId": 5,"columnId": 1,"xAxis":1,"yAxis":5,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-5-2","rowId": 5,"columnId": 2,"xAxis":2,"yAxis":5,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-5-3","rowId": 5,"columnId": 3,"xAxis":3,"yAxis":5,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-5-4","rowId": 5,"columnId": 4,"xAxis":4,"yAxis":5,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-5-5","rowId": 5,"columnId": 5,"xAxis":5,"yAxis":5,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-5-6","rowId": 5,"columnId": 6,"xAxis":6,"yAxis":5,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-5-7","rowId": 5,"columnId": 7,"xAxis":7,"yAxis":5,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-5-9","rowId": 5,"columnId": 9,"xAxis":9,"yAxis":5,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-5-10","rowId": 5,"columnId": 10,"xAxis":10,"yAxis":5,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-5-11","rowId": 5,"columnId": 11,"xAxis":11,"yAxis":5,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-5-12","rowId": 5,"columnId": 12,"xAxis":12,"yAxis":5,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-5-13","rowId": 5,"columnId": 13,"xAxis":13,"yAxis":5,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-5-14","rowId": 5,"columnId": 14,"xAxis":14,"yAxis":5,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-5-15","rowId": 5,"columnId": 15,"xAxis":15,"yAxis":5,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-6-1","rowId": 6,"columnId": 1,"xAxis":1,"yAxis":6,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-6-2","rowId": 6,"columnId": 2,"xAxis":2,"yAxis":6,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-6-3","rowId": 6,"columnId": 3,"xAxis":3,"yAxis":6,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-6-4","rowId": 6,"columnId": 4,"xAxis":4,"yAxis":6,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-6-5","rowId": 6,"columnId": 5,"xAxis":5,"yAxis":6,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-6-6","rowId": 6,"columnId": 6,"xAxis":6,"yAxis":6,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-6-7","rowId": 6,"columnId": 7,"xAxis":7,"yAxis":6,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-6-9","rowId": 6,"columnId": 9,"xAxis":9,"yAxis":6,"type":0,"isDamage":false,"isSold":true
+    },{
+      "seatId":"0000002-6-10","rowId": 6,"columnId": 10,"xAxis":10,"yAxis":6,"type":0,"isDamage":false,"isSold":true
+    },{
+      "seatId":"0000002-6-11","rowId": 6,"columnId": 11,"xAxis":11,"yAxis":6,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-6-12","rowId": 6,"columnId": 12,"xAxis":12,"yAxis":6,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-6-13","rowId": 6,"columnId": 13,"xAxis":13,"yAxis":6,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-6-14","rowId": 6,"columnId": 14,"xAxis":14,"yAxis":6,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-6-15","rowId": 6,"columnId": 15,"xAxis":15,"yAxis":6,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-7-1","rowId": 7,"columnId": 1,"xAxis":1,"yAxis":7,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-7-2","rowId": 7,"columnId": 2,"xAxis":2,"yAxis":7,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-7-3","rowId": 7,"columnId": 3,"xAxis":3,"yAxis":7,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-7-4","rowId": 7,"columnId": 4,"xAxis":4,"yAxis":7,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-7-5","rowId": 7,"columnId": 5,"xAxis":5,"yAxis":7,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-7-6","rowId": 7,"columnId": 6,"xAxis":6,"yAxis":7,"type":0,"isDamage":false,"isSold":true
+    },{
+      "seatId":"0000002-7-7","rowId": 7,"columnId": 7,"xAxis":7,"yAxis":7,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-7-9","rowId": 7,"columnId": 9,"xAxis":9,"yAxis":7,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-7-10","rowId": 7,"columnId": 10,"xAxis":10,"yAxis":7,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-7-11","rowId": 7,"columnId": 11,"xAxis":11,"yAxis":7,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-7-12","rowId": 7,"columnId": 12,"xAxis":12,"yAxis":7,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-7-13","rowId": 7,"columnId": 13,"xAxis":13,"yAxis":7,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-7-14","rowId": 7,"columnId": 14,"xAxis":14,"yAxis":7,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-8-1","rowId": 8,"columnId": 1,"xAxis":1,"yAxis":8,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-8-2","rowId": 8,"columnId": 2,"xAxis":2,"yAxis":8,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-8-3","rowId": 8,"columnId": 3,"xAxis":3,"yAxis":8,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-8-4","rowId": 8,"columnId": 4,"xAxis":4,"yAxis":8,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-8-5","rowId": 8,"columnId": 5,"xAxis":5,"yAxis":8,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-8-6","rowId": 8,"columnId": 6,"xAxis":6,"yAxis":8,"type":0,"isDamage":false,"isSold":true
+    },{
+      "seatId":"0000002-8-7","rowId": 8,"columnId": 7,"xAxis":7,"yAxis":8,"type":0,"isDamage":false,"isSold":true
+    },{
+      "seatId":"0000002-8-10","rowId": 8,"columnId": 10,"xAxis":10,"yAxis":8,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-8-11","rowId": 8,"columnId": 11,"xAxis":11,"yAxis":8,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-8-12","rowId": 8,"columnId": 12,"xAxis":12,"yAxis":8,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-8-13","rowId": 8,"columnId": 13,"xAxis":13,"yAxis":8,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-8-14","rowId": 8,"columnId": 14,"xAxis":14,"yAxis":8,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-8-15","rowId": 8,"columnId": 15,"xAxis":15,"yAxis":8,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-9-1","rowId": 9,"columnId": 1,"xAxis":1,"yAxis":9,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-9-2","rowId": 9,"columnId": 2,"xAxis":2,"yAxis":9,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-9-3","rowId": 9,"columnId": 3,"xAxis":3,"yAxis":9,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-9-4","rowId": 9,"columnId": 4,"xAxis":4,"yAxis":9,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-9-5","rowId": 9,"columnId": 5,"xAxis":5,"yAxis":9,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-9-6","rowId": 9,"columnId": 6,"xAxis":6,"yAxis":9,"type":0,"isDamage":false,"isSold":true
+    },{
+      "seatId":"0000002-9-7","rowId": 9,"columnId": 7,"xAxis":7,"yAxis":9,"type":0,"isDamage":false,"isSold":true
+    },{
+      "seatId":"0000002-9-9","rowId": 9,"columnId": 9,"xAxis":9,"yAxis":9,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-9-10","rowId": 9,"columnId": 10,"xAxis":10,"yAxis":9,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-9-11","rowId": 9,"columnId": 11,"xAxis":11,"yAxis":9,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-9-12","rowId": 9,"columnId": 12,"xAxis":12,"yAxis":9,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-9-13","rowId": 9,"columnId": 13,"xAxis":13,"yAxis":9,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-9-14","rowId": 9,"columnId": 14,"xAxis":14,"yAxis":9,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-9-15","rowId": 9,"columnId": 15,"xAxis":15,"yAxis":9,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-10-1","rowId": 10,"columnId": 1,"xAxis":1,"yAxis":10,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-10-2","rowId": 10,"columnId": 2,"xAxis":2,"yAxis":10,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-10-3","rowId": 10,"columnId": 3,"xAxis":3,"yAxis":10,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-10-4","rowId": 10,"columnId": 4,"xAxis":4,"yAxis":10,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-10-5","rowId": 10,"columnId": 5,"xAxis":5,"yAxis":10,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-10-6","rowId": 10,"columnId": 6,"xAxis":6,"yAxis":10,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-10-7","rowId": 10,"columnId": 7,"xAxis":7,"yAxis":10,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-10-9","rowId": 10,"columnId": 9,"xAxis":9,"yAxis":10,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-10-10","rowId": 10,"columnId": 10,"xAxis":10,"yAxis":10,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-10-11","rowId": 10,"columnId": 11,"xAxis":11,"yAxis":10,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-10-12","rowId": 10,"columnId": 12,"xAxis":12,"yAxis":10,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-10-13","rowId": 10,"columnId": 13,"xAxis":13,"yAxis":10,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-10-14","rowId": 10,"columnId": 14,"xAxis":14,"yAxis":10,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-10-15","rowId": 10,"columnId": 15,"xAxis":15,"yAxis":10,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-11-2","rowId": 11,"columnId": 2,"xAxis":2,"yAxis":11,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-11-3","rowId": 11,"columnId": 3,"xAxis":3,"yAxis":11,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-11-4","rowId": 11,"columnId": 4,"xAxis":4,"yAxis":11,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-11-5","rowId": 11,"columnId": 5,"xAxis":5,"yAxis":11,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-11-6","rowId": 11,"columnId": 6,"xAxis":6,"yAxis":11,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-11-7","rowId": 11,"columnId": 7,"xAxis":7,"yAxis":11,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-11-9","rowId": 11,"columnId": 9,"xAxis":9,"yAxis":11,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-11-10","rowId": 11,"columnId": 10,"xAxis":10,"yAxis":11,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-11-11","rowId": 11,"columnId": 11,"xAxis":11,"yAxis":11,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-11-12","rowId": 11,"columnId": 12,"xAxis":12,"yAxis":11,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-11-13","rowId": 11,"columnId": 13,"xAxis":13,"yAxis":11,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-11-14","rowId": 11,"columnId": 14,"xAxis":14,"yAxis":11,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-11-15","rowId": 11,"columnId": 15,"xAxis":15,"yAxis":11,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-12-4","rowId": 12,"columnId": 4,"xAxis":4,"yAxis":12,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-12-5","rowId": 12,"columnId": 5,"xAxis":5,"yAxis":12,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-12-6","rowId": 12,"columnId": 6,"xAxis":6,"yAxis":12,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-12-7","rowId": 12,"columnId": 7,"xAxis":7,"yAxis":12,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-12-9","rowId": 12,"columnId": 9,"xAxis":9,"yAxis":12,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-12-10","rowId": 12,"columnId": 10,"xAxis":10,"yAxis":12,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-12-11","rowId": 12,"columnId": 11,"xAxis":11,"yAxis":12,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-12-12","rowId": 12,"columnId": 12,"xAxis":12,"yAxis":12,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-12-13","rowId": 12,"columnId": 13,"xAxis":13,"yAxis":12,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-12-14","rowId": 12,"columnId": 14,"xAxis":14,"yAxis":12,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-12-15","rowId": 12,"columnId": 15,"xAxis":15,"yAxis":12,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-13-2","rowId": 13,"columnId": 2,"xAxis":2,"yAxis":13,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-13-3","rowId": 13,"columnId": 3,"xAxis":3,"yAxis":13,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-13-4","rowId": 13,"columnId": 4,"xAxis":4,"yAxis":13,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-13-5","rowId": 13,"columnId": 5,"xAxis":5,"yAxis":13,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-13-6","rowId": 13,"columnId": 6,"xAxis":6,"yAxis":13,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-13-7","rowId": 13,"columnId": 7,"xAxis":7,"yAxis":13,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-13-9","rowId": 13,"columnId": 9,"xAxis":9,"yAxis":13,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-13-10","rowId": 13,"columnId": 10,"xAxis":10,"yAxis":13,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-13-11","rowId": 13,"columnId": 11,"xAxis":11,"yAxis":13,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-13-12","rowId": 13,"columnId": 12,"xAxis":12,"yAxis":13,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-13-13","rowId": 13,"columnId": 13,"xAxis":13,"yAxis":13,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-13-14","rowId": 13,"columnId": 14,"xAxis":14,"yAxis":13,"type":0,"isDamage":false,"isSold":false
+    },{
+      "seatId":"0000002-13-15","rowId": 13,"columnId": 15,"xAxis":15,"yAxis":13,"type":0,"isDamage":false,"isSold":false
+    }]
+}

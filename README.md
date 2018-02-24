@@ -1,5 +1,6 @@
 # 基于react的影院购票应用
 
+相关介绍：[基于react的影院购票应用](https://github.com/Aaaaaaaty/Blog/issues/3)
 > 技术栈：react redux sass webpack es6
 
 ## Directory
